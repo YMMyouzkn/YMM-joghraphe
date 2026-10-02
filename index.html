@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الجغرافي</title>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;700&display=swap"></noscript>
+<script>var h=document.documentElement;try{h.dataset.theme=localStorage.getItem('th')||'dark';if(localStorage.getItem('lg')==='en'){h.lang='en';h.dir='ltr'}}catch(e){h.dataset.theme='dark'}</script>
+<style>
+:root,:root[data-theme=dark]{--bg:#000;--ink:#fff;--mut:#9c9c9c;--line:#2e2e2e}
+:root[data-theme=light]{--bg:#fff;--ink:#000;--mut:#666;--line:#d2d2d2}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.8 'IBM Plex Sans Arabic',Tahoma,sans-serif}
+a{color:inherit}
+.w{max-width:820px;margin:0 auto}
+header{padding:22px 20px 0;border-bottom:1px solid var(--ink)}
+.btns{display:flex;gap:8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.8rem;color:var(--mut)}
+#th,#lg{font:inherit;font-size:.85rem;background:none;color:var(--ink);border:1px solid var(--ink);padding:3px 14px;cursor:pointer}
+#th:hover,#lg:hover{background:var(--ink);color:var(--bg)}
+button:focus-visible,a:focus-visible,#q:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+h1{margin:20px 0 4px;font-size:clamp(3.4rem,17vw,7rem);line-height:1.1;font-weight:700}
+header p{margin:0 0 20px;color:var(--mut);max-width:30em}
+#q{width:100%;padding:16px 0;font:inherit;font-size:1.4rem;border:0;border-top:1px solid var(--line);background:none;color:var(--ink);border-radius:0}
+#q::placeholder{color:var(--mut)}
+.chips{display:flex;overflow-x:auto;max-width:820px;margin:0 auto;padding:0 12px}
+.chips button{flex:none;font:inherit;font-size:.95rem;padding:12px 12px 9px;border:0;border-bottom:3px solid transparent;background:none;color:var(--mut);cursor:pointer}
+.chips button[aria-pressed=true]{color:var(--ink);border-bottom-color:var(--ink);font-weight:700}
+main{max-width:820px;margin:0 auto;padding:0 20px 60px}
+#n{color:var(--mut);font-size:.85rem;margin:14px 0 4px}
+#list,main section{counter-reset:c}
+h2{font-size:.8rem;letter-spacing:.1em;color:var(--mut);margin:32px 0 0;font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:6px}
+.card{display:block;overflow:hidden;position:relative;margin:0 -20px;padding:18px 20px;padding-inline-start:calc(20px + 2.6rem);border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
+.card::before{counter-increment:c;content:counter(c,decimal-leading-zero);position:absolute;inset-inline-start:20px;top:22px;font-size:.8rem;color:var(--mut)}
+.card:hover,.card:focus-visible{background:var(--ink);color:var(--bg);outline:0}
+.card:hover::before,.card:hover .e,.card:hover .s,.card:hover .tag,.card:focus-visible::before,.card:focus-visible .e,.card:focus-visible .s,.card:focus-visible .tag{color:inherit;opacity:.75}
+.t{font-weight:700;font-size:1.35rem;line-height:1.4}
+.e{color:var(--mut);font-size:.85rem;direction:ltr;display:inline-block;margin-inline-start:8px}
+.s{display:block;color:var(--mut);font-size:.95rem}
+.tag{float:left;font-size:.75rem;color:var(--mut);border:1px solid currentColor;padding:0 8px;line-height:1.6;margin-top:4px}
+.th{float:right;width:64px;height:64px;object-fit:cover;margin-inline-end:14px;filter:grayscale(1)}
+html[dir=ltr] .tag{float:right}html[dir=ltr] .th{float:left}
+.empty{text-align:center;color:var(--mut);padding:50px 0}
+.more{display:block;margin:28px 0;padding:14px;text-align:center;border:1px solid var(--ink);text-decoration:none;font-weight:500}
+.more:hover{background:var(--ink);color:var(--bg)}
+#pg{max-width:820px;margin:0 auto;padding:0 20px 60px}
+.bk{display:inline-block;margin:18px 0;font-size:.9rem;text-decoration:none;border-bottom:1px solid currentColor}
+.hi{display:block;width:100%;max-height:420px;object-fit:contain;margin:0 0 22px;filter:grayscale(1)}
+.hi:hover{filter:none}
+.pt{font-size:clamp(2.2rem,9vw,3.8rem);font-weight:700;line-height:1.25;margin:0 0 22px}
+.pt .e{display:block;margin:4px 0 0;font-size:1rem;font-weight:400;text-align:right}
+.fx{border-top:1px solid var(--ink)}
+.fr{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.fr b{flex:0 0 8em;font-weight:500;color:var(--mut)}
+.tx{margin:0;white-space:pre-line;font-size:1.1rem;line-height:2}
+.th,.hi{filter:none}.th{width:88px;height:88px}
+.card a.lk{display:block;overflow:hidden;color:inherit;text-decoration:none}
+.ac{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.ac button{font:inherit;font-size:.8rem;background:none;border:1px solid currentColor;color:inherit;padding:1px 12px;cursor:pointer}
+.ac button:hover{background:var(--ink);color:var(--bg)}
+.card .ac{margin:10px 0 0}
+#lg{max-width:46vw;background:var(--bg)}#lg option{background:var(--bg);color:var(--ink)}
+header .chips{padding:0;margin:0;max-width:none}
+#sub a{text-decoration:underline;white-space:nowrap}
+.hq{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:1.2rem}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:8px}
+.gl img{width:100%;aspect-ratio:1;object-fit:cover;cursor:zoom-in}.hi{cursor:zoom-in}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;z-index:9;padding:12px}.lb img{max-width:100%;max-height:100%}
+.sub{display:flex;gap:6px;overflow-x:auto;margin:12px 0;padding-bottom:4px}
+.sub button{flex:none;font:inherit;font-size:.9rem;padding:4px 14px;border:1px solid var(--line);background:none;color:var(--mut);cursor:pointer}
+.sub button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sr{display:flex;gap:8px;margin:14px 0}.sr input{flex:1;min-width:0;font:inherit;padding:10px;background:none;color:var(--ink);border:1px solid var(--ink);border-radius:0}
+.sr button{font:inherit;padding:0 18px;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
+.map{height:62vh;min-height:320px;margin:12px 0;border:1px solid var(--ink)}
+.bg{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:14px;margin:12px 0}
+.bk2{display:block;text-decoration:none;color:inherit}.bk2 img,.bk2 .ph{width:100%;aspect-ratio:2/3;object-fit:cover;background:var(--line);display:flex;align-items:center;justify-content:center;padding:6px;text-align:center;font-size:.8rem}
+.bk2 b{display:block;font-size:.9rem;line-height:1.4;margin-top:6px}.bk2 span{color:var(--mut);font-size:.8rem}
+.lb{z-index:2000}.md{position:relative;background:var(--bg);color:var(--ink);border:1px solid var(--ink);max-width:640px;width:100%;max-height:92vh;overflow:auto;padding:24px 18px}
+.md h2{font-size:1.2rem;color:var(--ink);margin:0 0 10px;border:0;letter-spacing:0}.md .hi{margin-bottom:12px}
+.mx{position:absolute;top:2px;inset-inline-end:10px;font-size:1.8rem;background:none;border:0;color:var(--ink);cursor:pointer}
+.cs{display:block;width:100%;font:inherit;padding:12px;margin:12px 0;background:var(--bg);color:var(--ink);border:1px solid var(--ink);border-radius:0}
+.vs{border-bottom:1px solid var(--line);padding:14px 0}.vs .tx{margin:6px 0}
+#tabs{flex-wrap:wrap;overflow:visible}
+#clk{font-size:.8rem;color:var(--mut);padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--line)}
+.ub{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}.ub button{font:inherit;font-size:.85rem;background:none;color:var(--ink);border:1px solid var(--ink);padding:2px 14px;cursor:pointer}.ub button:hover,.ub button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+h1{font-size:clamp(2.4rem,11vw,4.6rem)}
+.fl{position:relative;display:inline-block;padding:.05em .5em .05em .8em;color:#fff;-webkit-text-stroke:.06em #000;paint-order:stroke fill;background:linear-gradient(#000 33.3%,#fff 33.3% 66.6%,#007a3d 66.6%);transform-origin:left center;animation:wv 3.4s ease-in-out infinite}
+.fl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:.6em;background:#ce1126;clip-path:polygon(0 0,100% 50%,0 100%)}
+@keyframes wv{0%,100%{transform:skewY(-1.2deg)}50%{transform:skewY(1.2deg)}}
+.nt{border:1px solid var(--ink);padding:12px 14px;font-size:.92rem;margin:12px 0}
+.rd{display:block;width:100%;height:68vh;min-height:420px;border:0;background:#fff;margin:10px 0}.md:has(.rd){max-width:980px}
+.pi{margin-top:14px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}.cg div{border:1px solid var(--line);padding:6px 2px}.cg small{display:block;color:var(--mut);font-size:.7rem}.cg b{font-weight:500;color:var(--mut);font-size:.8rem}.cg .td{background:var(--ink);color:var(--bg)}.cg .td small{color:inherit}
+.fm{position:relative;overflow:hidden;margin:16px 20px;padding:22px 14px;text-align:center;cursor:pointer;color:#fff;border:5px double #f3d37a;border-radius:14px;box-shadow:0 0 0 3px rgba(0,0,0,.5),0 8px 28px rgba(0,0,0,.35)}
+.fm h2{font-size:1.5rem;color:#fff;border:0;margin:6px 0;letter-spacing:0}.fm p{margin:2px 0;opacity:.92}
+.bgE{font-size:4rem;line-height:1.2;user-select:none}
+.pq{position:absolute;font-size:1.6rem;pointer-events:none;animation:pq 2.4s ease-out forwards}
+@keyframes pq{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+@media(prefers-reduced-motion:reduce){.fl{animation:none}}
+
+:root,:root[data-theme=dark]{--bg:#0e1218;--sf:#161c25;--ink:#eef2f7;--mut:#8b97a8;--line:#252e3b;--ac:#2dd4bf;--on:#06201c;--d:1}
+:root[data-theme=light]{--bg:#f5f7fa;--sf:#fff;--ink:#101828;--mut:#667085;--line:#e3e8ef;--ac:#0f766e;--on:#fff}
+html[dir=ltr]{--d:-1}body{font-family:'Readex Pro',Tahoma,sans-serif;font-size:16px;line-height:1.75}
+header.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+#mb{display:grid;gap:5px;padding:11px 10px;background:none;border:1px solid var(--line);border-radius:12px;cursor:pointer}#mb i{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px}
+.lo{display:flex;flex-direction:column;align-items:flex-start;line-height:1}.lo h1{margin:0;font-size:1.25rem;font-weight:700;line-height:1.2}
+.pf{display:block;width:34px;height:22px;margin-top:5px;border-radius:3px;background:linear-gradient(#000 33%,#fff 33% 66%,#007a3d 66%);position:relative;overflow:hidden}.pf::before{content:'';position:absolute;inset:0 auto 0 0;width:45%;background:#ce1126;clip-path:polygon(0 0,100% 50%,0 100%)}
+header .btns{margin-inline-start:auto}
+#dr{position:fixed;inset-block:0;inset-inline-start:0;z-index:100;width:min(310px,85vw);background:var(--sf);border-inline-end:1px solid var(--line);padding:18px 12px;overflow:auto;transform:translateX(calc(var(--d)*100%));transition:transform .25s}
+body.dr #dr{transform:none}#sc{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.5);display:none}body.dr #sc{display:block}
+#tabs{display:flex;flex-direction:column;gap:2px;padding:0}#tabs button{text-align:start;padding:10px 14px;border:0;border-radius:12px;font-size:1rem;color:var(--ink);background:none}#tabs button[aria-pressed=true]{background:var(--ac);color:var(--on);font-weight:700}
+#dr .ub{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.hero{padding:26px 20px 8px}#clk{border:0;padding:0;margin:0 0 6px;font-size:.78rem}#top{font-size:1.5rem;font-weight:700;line-height:1.4;margin:0 0 6px}#sub{color:var(--mut);font-size:.88rem;margin:0 0 14px}
+#q{background:var(--sf);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:0;font-size:1.1rem}#q:focus{border-color:var(--ac);outline:0}
+.card{margin:10px 0;padding:16px 18px;background:var(--sf);border:1px solid var(--line);border-radius:16px}.card::before{display:none}
+.card:hover,.card:focus-visible{background:var(--sf);color:var(--ink);border-color:var(--ac)}.card:hover .e,.card:hover .s,.card:hover .tag,.card:focus-visible .e,.card:focus-visible .s,.card:focus-visible .tag{color:var(--mut);opacity:1}
+.tag{color:var(--ac);border-radius:99px}h2{letter-spacing:0;font-size:.95rem;color:var(--ac);border:0;margin:26px 0 8px;font-weight:700}.md h2{margin-top:0}
+.more,.cs,.nt,.sr input,.md,.map,.th,.gl img{border-radius:14px}.nt{border-color:var(--line)}.more{border-color:var(--line)}.more:hover,.ub button:hover{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.sub button,.ub button,.sr button,#th,#lg,.ac button{border-radius:99px;border-color:var(--line)}.sub button[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:var(--on)}
+.sr button{background:var(--ac);color:var(--on)}.gl img{object-fit:contain;background:var(--sf)}
+.cp{display:grid;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:12px 0}.cp>*{padding:9px 11px;border-bottom:1px solid var(--line);overflow-wrap:anywhere;font-size:.9rem}.cp .h{background:var(--sf);font-weight:700;text-align:center}.cp .l{color:var(--mut)}.cp .wn{color:var(--ac);font-weight:700}.cp img{width:44px;display:block;margin:0 auto 4px;border-radius:3px}
+/* fixes: menu, map, phone */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}body.dr{overflow:hidden}
+img,iframe{max-width:100%}
+#dr{top:0;bottom:0;right:0;left:auto;transform:translateX(100%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s;overscroll-behavior:contain}
+html[dir=ltr] #dr{right:auto;left:0;transform:translateX(-100%)}
+body.dr #dr{transform:none;visibility:visible;transition:transform .25s ease}
+#sc,.lb{top:0;right:0;bottom:0;left:0}
+#sc{display:block;opacity:0;pointer-events:none;transition:opacity .25s}
+body.dr #sc{opacity:1;pointer-events:auto}
+.map{position:relative;z-index:0;isolation:isolate}
+@media(max-width:600px){
+header.bar{gap:8px;padding:8px 12px}
+.lo{flex:none}.lo h1{font-size:1.1rem;white-space:nowrap;line-height:1.35;overflow:visible}
+header .btns{gap:6px;flex:1 1 auto;min-width:0;justify-content:flex-end}
+#lg{min-width:0;max-width:40vw;padding:5px 8px;text-overflow:ellipsis}#th{padding:5px 10px}
+.hero{padding:18px 16px 6px}#top{font-size:1.25rem}
+main,#pg{padding-left:16px;padding-right:16px}
+.fr{flex-direction:column;gap:2px}.fr b{flex:none}
+.md{padding:20px 14px;max-height:90vh;max-height:90dvh}.lb{padding:8px}
+.rd{height:60vh;height:60dvh;min-height:320px}
+.map{height:52vh;height:52dvh;min-height:300px}
+.pt{font-size:clamp(1.7rem,8vw,2.4rem)}
+.gl{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+.bg{grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:10px}}
+@media(pointer:coarse){#lg{font-size:16px}#mb{min-width:44px;min-height:44px}.ac button,.ub button,.sub button{min-height:38px}}
+.hm h2{margin:22px 0 6px}.hm .hq{font-size:1.02rem;padding:10px 0}.hm .card{margin:6px 0}
+.wx{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--sf);border:1px solid var(--line);border-radius:16px}.wx .bgE{font-size:2.8rem}.wx b{display:block;font-size:1.1rem}.wx small{display:block;color:var(--mut);line-height:1.6}.wx+.ac{margin-top:8px}
+.fr span{min-width:0;overflow-wrap:anywhere}.vs.bd{color:#e5484d}.vs.wr{color:#f5a524}
+body{font-size:1rem}#sg{font:inherit;background:none;color:var(--ink);border:1px solid var(--line);padding:3px 10px;border-radius:99px;cursor:pointer}
+.ac button[aria-pressed=true]{background:var(--ac);color:var(--on);border-color:var(--ac)}textarea.cs{resize:vertical}
+.ts{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:3000;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;max-width:90vw;font-size:.9rem}
+.hx{display:block;margin:18px auto 0;width:28px;height:28px;border:0;background:none;color:var(--mut);opacity:.15;cursor:pointer}
+.vs .ac{margin:8px 0 0}.vs a{font-weight:700}
+</style>
+</head>
+<body>
+<header class="bar"><button id="mb" type="button" aria-label="menu"><i></i><i></i><i></i></button><div class="lo"><h1 id="h1"></h1><i class="pf"></i></div><div class="btns"><select id="lg" aria-label="language"></select><button id="sg" type="button" aria-label="settings">⚙️</button><button id="th" type="button" aria-label="theme"></button></div></header>
+<aside id="dr"><nav id="tabs"></nav><div class="ub" id="ub"></div></aside><div id="sc"></div>
+<div class="hero w"><div id="clk"></div><p id="top"></p><p id="sub"></p><input id="q" type="search" aria-label="search" autocomplete="off"></div>
+<div id="oc"></div><main><p id="n" aria-live="polite"></p><div id="list"></div></main>
+<section id="pg" hidden></section>
+<script>
+(function(){var b=document.body;function close(){b.classList.remove('dr')}
+document.addEventListener('click',function(e){var t=e.target;
+if(t.closest&&t.closest('#mb'))b.classList.toggle('dr');else if(t.id==='sc')close()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})})();
+</script>
+<script>const T={
+ar:{ph:'ابحث عن أي شيء…',cnt:n=>n?'الموسوعة تحتوي على '+n+' مقال':'الموسوعة تحتوي على مقالات',more:'تحميل المزيد',load:'جارٍ التحميل…',none:'لا توجد نتائج. جرّب كلمة أخرى.',net:'تعذّر الاتصال. تحقق من الإنترنت.',retry:'تعذّر التحميل. اضغط للمحاولة مرة أخرى.',art:'مقال',more2:'المزيد من النتائج',back:'→ رجوع',facts:'معلومات أساسية',about:'نبذة',nopage:'لا توجد صفحة لهذه المادة.',tD:'خلفية بيضاء',tL:'خلفية سوداء',wed:'تاريخ الزواج: ',wend:'انتهى: ',circa:'نحو ',bc:' ق.م',cent:n=>'القرن '+n,fav:'مفضلة',sav:'حفظ',hid:'عدم الإظهار',show:'إظهار',search:'بحث',favs:'المفضلة',savs:'المحفوظات',hids:'المخفية',his:'سجل البحث',empty:'لا يوجد شيء هنا بعد.',clear:'مسح السجل',imgs:'صور',rel:'مواضيع ذات صلة',desc:n=>'موسوعة كاملة متكاملة تتضمن مقالات'+(n?' عددها '+n:'')+'. وهذه الموسوعة من تطوير شركة YMM. الرابط الرسمي للشركة: '},
+en:{ph:'Search anything…',cnt:n=>'The encyclopedia contains '+(n?n+' ':'')+'articles',more:'Load more',load:'Loading…',none:'No results. Try another word.',net:'Connection failed. Check your internet.',retry:'Could not load. Tap to retry.',art:'Article',more2:'More results',back:'← Back',facts:'Key facts',about:'Overview',nopage:'No page found for this topic.',tD:'White background',tL:'Black background',wed:'Married: ',wend:'Ended: ',circa:'c. ',bc:' BC',cent:n=>n+(n%100>10&&n%100<14?'th':['th','st','nd','rd'][n%10]||'th')+' century',fav:'Favorite',sav:'Save',hid:'Hide',show:'Unhide',search:'Search',favs:'Favorites',savs:'Saved',hids:'Hidden',his:'History',empty:'Nothing here yet.',clear:'Clear history',imgs:'Images',rel:'Related topics',desc:n=>'A complete, integrated encyclopedia containing '+(n?n+' ':'')+'articles. This encyclopedia is developed by YMM. Official company website: '}};
+const LGS=[['ar','العربية'],['en','English'],['fr','Français'],['es','Español'],['de','Deutsch'],['it','Italiano'],['pt','Português'],['ru','Русский'],['tr','Türkçe'],['fa','فارسی'],['ur','اردو'],['hi','हिन्दी'],['bn','বাংলা'],['zh','中文'],['ja','日本語'],['ko','한국어'],['id','Bahasa Indonesia'],['nl','Nederlands'],['pl','Polski'],['uk','Українська'],['he','עברית'],['el','Ελληνικά'],['sv','Svenska'],['vi','Tiếng Việt'],['th','ไทย']];
+// كلمة «جغرافي» لكل لغة؛ الباقي يُجلب تلقائيًا
+const GW={ar:'الجغرافي',en:'aljoghrphe',fr:'Géographe',es:'Geógrafo',de:'Geograph',it:'Geografo',pt:'Geógrafo',ru:'Географ',tr:'Coğrafyacı',fa:'جغرافیدان',ur:'جغرافیہ دان',hi:'भूगोलवेत्ता',bn:'ভূগোলবিদ',zh:'地理学家',ja:'地理学者',ko:'지리학자',id:'Geografer',nl:'Geograaf',pl:'Geograf',uk:'Географ',he:'גאוגרף',el:'Γεωγράφος',sv:'Geograf',vi:'Nhà địa lý',th:'นักภูมิศาสตร์'};
+const RTL=/^(ar|arz|ary|fa|ur|he|yi|ps|sd|ug|dv|ckb|azb|mzn)$/;
+let LG='ar',GL={},ST={fav:{},sav:{},hid:{},his:[]};
+try{LG=localStorage.getItem('lg')||'ar';GL=JSON.parse(localStorage.getItem('ymm_gl')||'{}');Object.assign(ST,JSON.parse(localStorage.getItem('ymm')||'{}'))}catch(e){}
+const tr=k=>(T[LG]||T.en)[k],save=()=>{try{localStorage.setItem('ymm',JSON.stringify(ST))}catch(e){}},K=(t,l=LG)=>l+':'+t;
+const C={c:['دول','#1F8A8A'],p:['سياسة','#5B6BC0'],h:['شخصيات','#C0792B'],n:['طبيعة','#3E9B4F'],t:['تاريخ','#A0506B']};
+// لإضافة معلومة جديدة: أضف صفًا بالشكل [القسم, الاسم, English, الملخص, 'حقيقة|حقيقة']
+const D=[
+['c','السعودية','Saudi Arabia','دولة في شبه الجزيرة العربية، فيها الحرمان الشريفان.','العاصمة: الرياض|المساحة: نحو 2.15 مليون كم²|العملة: الريال'],
+['c','مصر','Egypt','دولة عربية تربط أفريقيا بآسيا، يشقها نهر النيل.','العاصمة: القاهرة|المساحة: نحو مليون كم²|العملة: الجنيه|قناة السويس'],
+['c','المغرب','Morocco','دولة في شمال غرب أفريقيا على الأطلسي والمتوسط.','العاصمة: الرباط|العملة: الدرهم|جبال الأطلس'],
+['c','العراق','Iraq','أرض الرافدين ومهد حضارات سومر وبابل.','العاصمة: بغداد|نهرا دجلة والفرات|العملة: الدينار'],
+['c','الجزائر','Algeria','أكبر دولة أفريقية مساحةً.','العاصمة: الجزائر|المساحة: نحو 2.38 مليون كم²|العملة: الدينار'],
+['c','الإمارات','United Arab Emirates','اتحاد من سبع إمارات على الخليج العربي.','العاصمة: أبوظبي|أكبر مدنها: دبي|العملة: الدرهم'],
+['c','تركيا','Türkiye','دولة تمتد بين آسيا وأوروبا عبر البوسفور والدردنيل.','العاصمة: أنقرة|أكبر مدنها: إسطنبول|العملة: الليرة'],
+['c','اليابان','Japan','أرخبيل في شرق آسيا ومن أكبر اقتصادات العالم.','العاصمة: طوكيو|السكان: نحو 124 مليونًا|العملة: الين'],
+['c','الصين','China','من أكبر دول العالم سكانًا ومساحةً.','العاصمة: بكين|العملة: اليوان|سور الصين العظيم'],
+['c','الهند','India','أكثر دول العالم سكانًا وأكبرها ديمقراطيةً.','العاصمة: نيودلهي|السكان: أكثر من 1.4 مليار|العملة: الروبية'],
+['c','الولايات المتحدة','United States','جمهورية فدرالية في أمريكا الشمالية من 50 ولاية.','العاصمة: واشنطن|أكبر مدنها: نيويورك|العملة: الدولار'],
+['c','البرازيل','Brazil','أكبر دول أمريكا الجنوبية، وفيها معظم غابات الأمازون.','العاصمة: برازيليا|اللغة: البرتغالية|العملة: الريال البرازيلي'],
+['c','روسيا','Russia','أكبر دولة في العالم مساحةً.','العاصمة: موسكو|المساحة: نحو 17.1 مليون كم²|العملة: الروبل'],
+['p','الأمم المتحدة','United Nations','منظمة دولية تأسست عام 1945 لحفظ السلم والأمن الدوليين.','المقر: نيويورك|الأعضاء: 193 دولة|أبرز أجهزتها: الجمعية العامة ومجلس الأمن'],
+['p','مجلس الأمن','Security Council','الجهاز المسؤول عن حفظ السلم والأمن الدوليين.','15 عضوًا|خمسة دائمون لهم حق النقض: أمريكا وروسيا والصين وفرنسا وبريطانيا'],
+['p','جامعة الدول العربية','Arab League','منظمة إقليمية تجمع الدول العربية، تأسست عام 1945.','المقر: القاهرة|الأعضاء: 22 دولة'],
+['p','الاتحاد الأوروبي','European Union','اتحاد سياسي واقتصادي بين دول أوروبية.','المقر: بروكسل|الأعضاء: 27 دولة|اليورو عملة معظم أعضائه'],
+['p','أنظمة الحكم','Forms of government','الطرق التي تُدار بها الدول.','جمهوري: رئيس الدولة منتخب|ملكي: رأس الدولة وراثي|برلماني ورئاسي وفدرالي'],
+['h','ابن بطوطة','Ibn Battuta','رحالة مغربي طاف أنحاء العالم المعروف في القرن الـ14.','وُلد في طنجة عام 1304|رحلته: تحفة النظار'],
+['h','ابن خلدون','Ibn Khaldun','مؤرخ ومفكر يُعدّ من مؤسسي علم الاجتماع.','1332 – 1406|كتابه: المقدمة'],
+['h','الإدريسي','Al-Idrisi','جغرافي عربي رسم خريطة للعالم لملك صقلية روجر الثاني.','كتابه: نزهة المشتاق في اختراق الآفاق|نحو 1100 – 1165'],
+['h','الخوارزمي','Al-Khwarizmi','عالم رياضيات وفلك وجغرافيا من العصر العباسي.','يُنسب إليه علم الجبر|كتابه: صورة الأرض'],
+['h','ماجلان','Ferdinand Magellan','مستكشف برتغالي قاد أول رحلة بحرية حول الأرض.','1519 – 1522|قُتل في الفلبين قبل إتمامها'],
+['h','نيلسون مانديلا','Nelson Mandela','قائد مناهض للفصل العنصري وأول رئيس أسود لجنوب أفريقيا.','1918 – 2013|رئيسًا من 1994 إلى 1999'],
+['n','نهر النيل','Nile','من أطول أنهار العالم، يجري شمالًا إلى البحر المتوسط.','الطول: نحو 6,650 كم|يمر بعدة دول أفريقية'],
+['n','الأمازون','Amazon','أكبر غابة مطيرة في العالم ونهر هو الأكبر تصريفًا للمياه.','أمريكا الجنوبية|أغلبها في البرازيل'],
+['n','جبل إفرست','Mount Everest','أعلى قمة فوق مستوى سطح البحر.','الارتفاع: نحو 8,849 م|جبال الهيمالايا بين نيبال والتبت'],
+['n','الصحراء الكبرى','Sahara','أكبر صحراء حارة في العالم.','المساحة: نحو 9 ملايين كم²|شمال أفريقيا'],
+['n','المحيط الهادئ','Pacific Ocean','أكبر المحيطات وأعمقها.','يغطي نحو ثلث سطح الأرض|فيه خندق ماريانا'],
+['n','البحر الميت','Dead Sea','بحيرة مالحة هي أخفض نقطة على اليابسة.','على حدود الأردن وفلسطين|نحو 430 م تحت سطح البحر'],
+['t','الحضارة المصرية القديمة','Ancient Egypt','حضارة قامت على ضفاف النيل منذ نحو 3100 ق.م.','الأهرامات|الكتابة الهيروغليفية'],
+['t','الدولة الأموية','Umayyad Caliphate','أول دولة وراثية في التاريخ الإسلامي.','661 – 750م|العاصمة: دمشق'],
+['t','الدولة العباسية','Abbasid Caliphate','خلافة ازدهرت فيها العلوم والترجمة.','750 – 1258م|العاصمة: بغداد|بيت الحكمة'],
+['t','الأندلس','Al-Andalus','الحكم الإسلامي في شبه الجزيرة الإيبيرية.','711 – 1492م|قرطبة وغرناطة'],
+['t','الحرب العالمية الثانية','World War II','أكبر نزاع مسلح في التاريخ.','1939 – 1945|أعقبها تأسيس الأمم المتحدة'],
+['t','الثورة الصناعية','Industrial Revolution','تحول إلى الإنتاج الآلي بدأ في بريطانيا.','منتصف القرن الـ18|المحرك البخاري']
+];
+C.s=['علوم','#7A5BB5'];
+const X=`
+h|ابن سينا|طبيب وفيلسوف من العصر الذهبي للإسلام.|980 – 1037|كتابه: القانون في الطب
+h|ابن الهيثم|عالم بصريات ومن رواد المنهج التجريبي.|نحو 965 – 1040|كتابه: المناظر
+h|صلاح الدين الأيوبي|مؤسس الدولة الأيوبية وقائد معركة حطين.|1137 – 1193|حطين عام 1187
+h|كريستوفر كولومبوس|ملاح إيطالي وصل إلى الأمريكتين عام 1492.|وُلد في جنوى|برعاية إسبانيا
+h|إسحاق نيوتن|عالم إنجليزي صاغ قوانين الحركة والجاذبية.|1643 – 1727
+h|ألبرت أينشتاين|فيزيائي صاحب النظرية النسبية.|1879 – 1955|جائزة نوبل 1921
+h|ماري كوري|أول امرأة تفوز بجائزة نوبل.|1867 – 1934|اكتشفت البولونيوم والراديوم
+h|مصطفى كمال أتاتورك|مؤسس الجمهورية التركية وأول رئيس لها.|1881 – 1938|أُعلنت الجمهورية عام 1923
+p|حلف الناتو|تحالف عسكري تأسس عام 1949.|المقر: بروكسل|بدأ بـ12 دولة
+p|مجلس التعاون الخليجي|تكتل إقليمي تأسس عام 1981.|المقر: الرياض|الأعضاء: 6 دول
+p|منظمة التعاون الإسلامي|منظمة حكومية دولية تأسست عام 1969.|المقر: جدة
+p|مجموعة العشرين|منتدى لأكبر اقتصادات العالم.|تأسست عام 1999|قمة سنوية لقادة الدول
+p|أوبك|منظمة الدول المصدّرة للنفط.|تأسست عام 1960|المقر: فيينا
+n|القارات السبع|أقسام اليابسة الكبرى.|الأكبر فالأصغر: آسيا، أفريقيا، أمريكا الشمالية، أمريكا الجنوبية، القارة القطبية، أوروبا، أوقيانوسيا
+n|خط الاستواء|دائرة وهمية تقسم الأرض إلى نصفين شمالي وجنوبي.|خط العرض صفر|طوله نحو 40,075 كم
+n|بحيرة فيكتوريا|أكبر بحيرة في أفريقيا.|بين أوغندا وكينيا وتنزانيا|نحو 68,800 كم²
+n|نهر الفرات|من أطول أنهار غرب آسيا.|ينبع من تركيا ويمر بسوريا والعراق|نحو 2,800 كم
+n|جبال الألب|أكبر سلسلة جبلية في أوروبا.|أعلى قممها مون بلان: نحو 4,806 م
+n|المحيط الأطلسي|ثاني أكبر المحيطات.|يفصل أوروبا وأفريقيا عن الأمريكتين
+n|البحر الأحمر|بحر يفصل أفريقيا عن آسيا.|يتصل بالمتوسط عبر قناة السويس|نحو 2,250 كم طولًا
+t|الحرب العالمية الأولى|نزاع عالمي بدأ عام 1914.|1914 – 1918|شرارتها اغتيال ولي عهد النمسا
+t|الدولة العثمانية|إمبراطورية حكمت مناطق واسعة نحو ستة قرون.|نحو 1299 – 1922|فتحت إسطنبول عام 1453
+t|الحضارة السومرية|من أقدم حضارات بلاد الرافدين.|نحو 4500 ق.م|ابتكرت الكتابة المسمارية
+t|الثورة الفرنسية|ثورة غيّرت نظام الحكم في فرنسا.|1789 – 1799|أُلغيت الملكية عام 1792
+s|المجموعة الشمسية|الشمس والأجرام التي تدور حولها.|8 كواكب|أقرب الكواكب للشمس: عطارد
+s|الأرض|الكوكب الثالث بعدًا عن الشمس.|القطر: نحو 12,742 كم|الماء نحو 71% من سطحها
+s|القمر|التابع الطبيعي الوحيد للأرض.|يبعد نحو 384,400 كم|يدور حول الأرض كل نحو 27 يومًا
+s|الجاذبية|قوة تجذب الأجسام بعضها إلى بعض.|تسارع الجاذبية على الأرض نحو 9.8 م/ث²
+s|الحمض النووي DNA|مادة وراثية تحمل صفات الكائنات.|اكتُشف تركيبه الحلزوني عام 1953
+`;
+X.trim().split('\n').forEach(l=>{const a=l.split('|');D.push([a[0],a[1],'',a[2],a.slice(3).join('|')])});
+// الدول: الاسم,العاصمة,القارة,السكان(مليون),المساحة(ألف كم²),العملة
+const KN=`
+الأردن,عمّان,A,11,89,الدينار الأردني
+البحرين,المنامة,A,1.5,0.8,الدينار البحريني
+تونس,تونس,F,12,164,الدينار التونسي
+السودان,الخرطوم,F,48,1862,الجنيه السوداني
+سوريا,دمشق,A,23,185,الليرة السورية
+الصومال,مقديشو,F,18,638,الشلن الصومالي
+عُمان,مسقط,A,5,310,الريال العماني
+فلسطين,القدس,A,5.5,6,الشيكل
+قطر,الدوحة,A,3,11.6,الريال القطري
+الكويت,الكويت,A,4.3,17.8,الدينار الكويتي
+لبنان,بيروت,A,5.5,10.5,الليرة اللبنانية
+ليبيا,طرابلس,F,7,1760,الدينار الليبي
+موريتانيا,نواكشوط,F,5,1031,الأوقية
+اليمن,صنعاء,A,34,528,الريال اليمني
+جيبوتي,جيبوتي,F,1,23,الفرنك الجيبوتي
+جزر القمر,موروني,F,0.9,2.2,الفرنك القمري
+إيران,طهران,A,89,1648,الريال الإيراني
+أفغانستان,كابل,A,42,652,الأفغاني
+باكستان,إسلام آباد,A,240,882,الروبية الباكستانية
+بنغلاديش,دكا,A,173,148,التاكا
+إندونيسيا,جاكرتا,A,277,1905,الروبية الإندونيسية
+ماليزيا,كوالالمبور,A,34,330,الرينغيت
+سنغافورة,سنغافورة,A,6,0.7,الدولار السنغافوري
+تايلاند,بانكوك,A,70,513,البات
+فيتنام,هانوي,A,100,331,الدونغ
+الفلبين,مانيلا,A,115,300,البيزو الفلبيني
+كوريا الجنوبية,سول,A,52,100,الوون
+كوريا الشمالية,بيونغ يانغ,A,26,121,الوون الكوري الشمالي
+كازاخستان,أستانا,A,20,2725,التينغي
+أوزبكستان,طشقند,A,36,449,السوم
+نيبال,كاتماندو,A,30,148,الروبية النيبالية
+سريلانكا,كولومبو,A,22,66,الروبية السريلانكية
+ميانمار,نايبيداو,A,54,677,الكيات
+أذربيجان,باكو,A,10,87,المانات
+جورجيا,تبليسي,A,3.7,70,اللاري
+أرمينيا,يريفان,A,3,30,الدرام
+إثيوبيا,أديس أبابا,F,126,1104,البير
+نيجيريا,أبوجا,F,224,924,النايرا
+جنوب أفريقيا,بريتوريا,F,60,1221,الراند
+كينيا,نيروبي,F,55,580,الشلن الكيني
+تنزانيا,دودوما,F,67,945,الشلن التنزاني
+غانا,أكرا,F,34,239,السيدي
+السنغال,داكار,F,18,197,فرنك غرب أفريقيا
+الكونغو الديمقراطية,كينشاسا,F,102,2345,الفرنك الكونغولي
+أنغولا,لواندا,F,36,1247,الكوانزا
+أوغندا,كمبالا,F,49,242,الشلن الأوغندي
+الكاميرون,ياوندي,F,28,476,فرنك وسط أفريقيا
+ساحل العاج,ياموسوكرو,F,28,322,فرنك غرب أفريقيا
+مالي,باماكو,F,23,1240,فرنك غرب أفريقيا
+النيجر,نيامي,F,27,1267,فرنك غرب أفريقيا
+تشاد,نجامينا,F,18,1284,فرنك وسط أفريقيا
+موزمبيق,مابوتو,F,34,802,الميتيكال
+مدغشقر,أنتاناناريفو,F,30,587,الأرياري
+رواندا,كيغالي,F,14,26,الفرنك الرواندي
+إريتريا,أسمرة,F,3.7,118,النقفة
+بريطانيا,لندن,E,68,244,الجنيه الإسترليني
+ألمانيا,برلين,E,84,358,اليورو
+إيطاليا,روما,E,59,301,اليورو
+إسبانيا,مدريد,E,48,506,اليورو
+البرتغال,لشبونة,E,10,92,اليورو
+هولندا,أمستردام,E,18,42,اليورو
+بلجيكا,بروكسل,E,11.7,31,اليورو
+سويسرا,برن,E,8.8,41,الفرنك السويسري
+السويد,ستوكهولم,E,10.5,450,الكرونة السويدية
+النرويج,أوسلو,E,5.5,385,الكرونة النرويجية
+فنلندا,هلسنكي,E,5.6,338,اليورو
+الدنمارك,كوبنهاغن,E,5.9,43,الكرونة الدنماركية
+بولندا,وارسو,E,37,313,الزلوتي
+أوكرانيا,كييف,E,38,604,الهريفنيا
+اليونان,أثينا,E,10.4,132,اليورو
+النمسا,فيينا,E,9.1,84,اليورو
+أيرلندا,دبلن,E,5.2,70,اليورو
+رومانيا,بوخارست,E,19,238,الليو
+التشيك,براغ,E,10.9,79,الكرونة التشيكية
+المجر,بودابست,E,9.6,93,الفورنت
+صربيا,بلغراد,E,6.7,88,الدينار الصربي
+البوسنة والهرسك,سراييفو,E,3.2,51,المارك
+ألبانيا,تيرانا,E,2.8,29,الليك
+آيسلندا,ريكيافيك,E,0.4,103,الكرونة الآيسلندية
+كندا,أوتاوا,N,40,9985,الدولار الكندي
+المكسيك,مكسيكو سيتي,N,129,1964,البيزو المكسيكي
+كوبا,هافانا,N,11,110,البيزو الكوبي
+جامايكا,كينغستون,N,2.8,11,الدولار الجامايكي
+الأرجنتين,بوينس آيرس,S,46,2780,البيزو الأرجنتيني
+كولومبيا,بوغوتا,S,52,1142,البيزو الكولومبي
+تشيلي,سانتياغو,S,19.5,756,البيزو التشيلي
+بيرو,ليما,S,34,1285,السول
+فنزويلا,كاراكاس,S,28,916,البوليفار
+الإكوادور,كيتو,S,18,284,الدولار الأمريكي
+بوليفيا,سوكري,S,12,1099,البوليفيانو
+أوروغواي,مونتيفيديو,S,3.4,176,البيزو الأوروغواني
+أستراليا,كانبرا,O,26,7692,الدولار الأسترالي
+نيوزيلندا,ويلنغتون,O,5.3,268,الدولار النيوزيلندي
+`;
+const KT={A:'آسيا',F:'أفريقيا',E:'أوروبا',N:'أمريكا الشمالية',S:'أمريكا الجنوبية',O:'أوقيانوسيا'},have=new Set(D.map(d=>d[1]));
+KN.trim().split('\n').forEach(l=>{const[n,c,k,p,a,u]=l.split(',');if(have.has(n))return;
+  D.push(['c',n,'','دولة في '+KT[k]+'، عاصمتها '+c+'.','العاصمة: '+c+'|السكان: نحو '+p+' مليون|المساحة: نحو '+a+' ألف كم²|العملة: '+u])});
+const norm=s=>s.toLowerCase().replace(/[\u064B-\u0652\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
+const IDX=D.map(d=>norm(d.slice(1).join(' ')));
+const $=id=>document.getElementById(id),list=$('list');
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+const WH=()=>'https://'+LG+'.wikipedia.org/w/api.php?format=json&origin=*&';
+const WB=()=>WH()+'action=query&prop=extracts|pageimages&exintro=1&explaintext=1&exlimit=max&piprop=thumbnail&pithumbsize=240&redirects=1&';
+const AR=()=>WH()+'action=query&redirects=1&prop=extracts|pageimages|pageprops|langlinks&explaintext=1&piprop=thumbnail&pithumbsize=900&ppprop=wikibase_item|disambiguation&lllang=en&';
+const WD='https://www.wikidata.org/w/api.php?format=json&origin=*&action=wbgetentities&';
+const nf=(n,o)=>{try{return(+n).toLocaleString(LG==='ar'?'ar-u-nu-latn':LG,o)}catch(e){return(+n).toLocaleString('en-US',o)}};
+const mn=m=>{try{return new Date(Date.UTC(2000,m-1,1)).toLocaleDateString(LG==='ar'?'ar-u-nu-latn':LG,{month:'long',timeZone:'UTC'})}catch(e){return m}};
+let tm,ht,tok=0,view='q',lastY=0,nav=false,first=true,dtok=0;
+const REG={},PG=$('pg'),MAIN=document.querySelector('main');
+const lbl=(kd,t,l)=>ST[kd][K(t,l)]?(kd==='hid'?tr('show'):'✓ '+tr(kd)):tr(kd);
+function acts(row,rm,t,sub,img,l,x){
+  (view==='hid'?['hid']:['fav','sav','hid']).forEach(kd=>{
+    const b=el('button','',lbl(kd,t,l));b.type='button';
+    b.onclick=()=>{const k=K(t,l);if(ST[kd][k])delete ST[kd][k];else ST[kd][k]=Object.assign({t,l,s:sub,i:img},kd==='sav'&&x?x():{});
+      save();tabs();b.textContent=lbl(kd,t,l);const on=!!ST[kd][k];fbMk(kd,t,l,on,sub,img);
+      if(rm&&((view===kd&&!on)||(kd==='hid'&&on&&view!=='hid')))rm.remove()};
+    row.appendChild(b)})}
+function item(tag,title,en,sub,facts,img,text,l=LG){
+  REG[K(title,l)]={tag,en,sub,facts,text,img};
+  const k=el('div','card'),a=el('a','lk'),ac=el('div','ac');
+  a.href='#/'+l+'/'+encodeURIComponent(title);
+  if(img){const i=el('img','th');i.src=img;i.alt='';i.loading='lazy';a.appendChild(i)}
+  a.append(el('span','tag',tag),el('span','t',title),el('span','e',en),el('span','s',sub));
+  acts(ac,k,title,sub,img,l);k.append(a,ac);return k}
+const SN={map:['الخريطة','Map'],books:['الكتب','Books'],space:['الفضاء','Space'],stories:['قصص دينية','Stories'],islam:['الإسلاميات','Islamic'],cook:['الطبخ','Cooking'],sci:['العلوم','Science'],gov:['السجلات الرسمية','Official records'],news:['الأخبار','News'],occ:['المناسبات','Occasions'],cal:['التقويم','Calendar'],cmp:['مقارنات','Compare'],deep:['بحث معمق','Deep search'],mda:['ملصقات وصور','Stickers & images'],fnt:['الخطوط','Fonts'],lng:['لغات العالم','Languages'],plc:['أماكن تاريخية','Historic places'],med:['داء ودواء','Health & remedies'],prc:['أسعار','Prices'],fxs:['العملات','Currencies'],lnk:['فحص الروابط','Link check'],sug:['أضف معلومة','Add info']};
+function tabs(){const n=$('tabs'),ub=$('ub');n.innerHTML=ub.innerHTML='';
+  ['q',...Object.keys(SN),'fav','sav','hid','his'].forEach(k=>{
+    const t=SN[k]?W(SN[k][0],SN[k][1]):tr({q:'search',fav:'favs',sav:'savs',hid:'hids',his:'his'}[k])+(['fav','sav','hid'].includes(k)?' ('+Object.keys(ST[k]).length+')':'');
+    const b=el('button','',t);b.setAttribute('aria-pressed',k===view);
+    b.onclick=()=>{if(location.hash)location.hash='';view=k;tabs();render();document.body.classList.remove('dr')};(/^(fav|sav|hid|his)$/.test(k)?ub:n).appendChild(b)})}
+async function wk(x){const j=await(await fetch(WB()+x)).json();
+  return{pages:Object.values((j.query||{}).pages||{}).sort((a,b)=>(a.index||0)-(b.index||0)),next:(j.continue||{}).gsroffset}}
+function wiki(q,hl){
+  const box=el('section');if(hl)box.appendChild(el('h2','',tr('more2')));
+  const st=el('p','empty',tr('load')),more=el('a','more',tr('more'));
+  more.href='#';box.appendChild(st);list.appendChild(box);
+  const my=tok,seen=new Set();let off=0,busy=false,end=false,fail=false;
+  const io=new IntersectionObserver(e=>{if(e[0].isIntersecting)load()},{rootMargin:'600px'});
+  async function load(){
+    if(busy||end||my!==tok)return;busy=true;fail=false;
+    if(more.isConnected)more.textContent=tr('load');
+    try{
+      const r=await wk('generator=search&gsrlimit=15&gsroffset='+off+'&gsrsearch='+encodeURIComponent(q));
+      if(my!==tok)return;
+      if(r.next==null)end=true;else off=r.next;
+      const P=r.pages.filter(p=>!seen.has(p.pageid)&&!ST.hid[K(p.title)]&&!GH[K(p.title)]);
+      r.pages.forEach(p=>seen.add(p.pageid));
+      if(!P.length&&seen.size===r.pages.length&&!box.querySelector('.card')&&end){if(hl)box.remove();else st.textContent=tr('none');return}
+      if(st.isConnected){st.remove();box.appendChild(more)}
+      P.forEach(p=>{const x=(p.extract||'').trim();
+        box.insertBefore(item(tr('art'),p.title,'',x.slice(0,110)+(x.length>110?'…':''),null,(p.thumbnail||{}).source,x),more)});
+      if(end){more.remove();io.disconnect()}else more.textContent=tr('more');
+    }catch(e){
+      fail=true;
+      if(st.isConnected)st.textContent=tr('net');else more.textContent=tr('retry');
+    }finally{
+      busy=false;
+      if(!end&&!fail&&my===tok&&more.isConnected){io.unobserve(more);io.observe(more)}
+    }
+  }
+  more.onclick=e=>{e.preventDefault();load()};
+  tm=setTimeout(load,350);
+}
+function render(){
+  clearTimeout(tm);tok++;list.innerHTML='';$('n').textContent='';if(MAPO){MAPO.remove();MAPO=null}
+  if(SEC[view]){SEC[view]();return}
+  if(view==='his'){
+    if(!ST.his.length){list.appendChild(el('p','empty',tr('empty')));return}
+    ST.his.forEach(h=>{const b=el('a','hq',h);b.href='#';b.onclick=e=>{e.preventDefault();$('q').value=h;view='q';tabs();render()};list.appendChild(b)});
+    const c=el('a','more',tr('clear'));c.href='#';c.onclick=e=>{e.preventDefault();ST.his=[];save();render()};list.appendChild(c);return}
+  if(view!=='q'){
+    const a=Object.values(ST[view]);if(!a.length)list.appendChild(el('p','empty',tr('empty')));
+    a.forEach(o=>list.appendChild(item(tr('art'),o.t,'',o.s,null,o.i,o.s,o.l)));return}
+  const raw=$('q').value.trim(),q=norm(raw);if(!raw){home();return}
+  const r=LG==='ar'?D.filter((d,i)=>IDX[i].includes(q)&&!ST.hid[K(d[1])]&&!GH[K(d[1])]):[];
+  r.forEach(d=>list.appendChild(item(C[d[0]][0],d[1],d[2],d[3],d[4].split('|'),null,d[3])));
+  if(raw.length>1){wiki(raw,r.length);clearTimeout(ht);ht=setTimeout(()=>{ST.his=[raw,...ST.his.filter(x=>x!==raw)].slice(0,50);save()},1500)}
+}
+function fd(v){const m=/^([+-])(\d+)-(\d\d)-(\d\d)/.exec(v.time||'');if(!m)return'';
+  const y=+m[2],mo=+m[3],d=+m[4],pr=v.precision,ys=m[1]==='-'?y+tr('bc'):String(y);
+  if(pr>=11&&mo&&d)return d+' '+mn(mo)+' '+ys;
+  if(pr===10&&mo)return mn(mo)+' '+ys;
+  if(pr===7)return tr('cent')(Math.ceil(y/100));
+  return pr<9?tr('circa')+ys:ys}
+const PR=[['P31','النوع','i'],['P1477','الاسم الأصلي','u'],['P1449','اللقب','u'],['P21','الجنس','i'],['P569','تاريخ الميلاد','t'],['P19','مكان الميلاد','i'],['P570','تاريخ الوفاة','t'],['P20','مكان الوفاة','i'],['P509','سبب الوفاة','i'],['P119','مكان الدفن','i'],
+['P26','عدد الزوجات/الأزواج','c'],['P26','الزوج/الزوجة','s'],['P40','عدد الأبناء','c'],['P40','الأبناء','i'],['P3373','عدد الإخوة والأخوات','c'],['P3373','الإخوة والأخوات','i'],['P22','الأب','i'],['P25','الأم','i'],
+['P27','الجنسية','i'],['P172','الأصل العرقي','i'],['P140','الديانة','i'],['P103','اللغة الأم','i'],['P1412','اللغات','i'],['P551','محل الإقامة','i'],['P106','المهنة','i'],['P39','المناصب','i'],['P108','جهة العمل','i'],['P463','عضو في','i'],['P69','التعليم','i'],['P102','الحزب','i'],['P241','الفرع العسكري','i'],['P607','الحروب والمعارك','i'],['P101','مجال العمل','i'],['P136','النوع الفني','i'],['P1303','الآلة','i'],['P641','الرياضة','i'],['P54','الفرق','i'],['P800','أعمال بارزة','i'],['P166','الجوائز','i'],['P2048','الطول','q'],['P2067','الكتلة','q'],['P2218','صافي الثروة','q'],['P856','الموقع الرسمي','u'],
+['P571','تاريخ التأسيس','t'],['P576','تاريخ الانتهاء','t'],['P17','الدولة','i'],['P131','يقع في','i'],['P30','القارة','i'],['P36','العاصمة','i'],['P35','رئيس الدولة','i'],['P6','رئيس الحكومة','i'],['P122','نظام الحكم','i'],['P38','العملة','i'],['P37','اللغة الرسمية','i'],['P47','يحدها','i'],['P421','المنطقة الزمنية','i'],['P473','رمز الاتصال','u'],['P78','نطاق الإنترنت','u'],['P85','النشيد','i'],['P1451','الشعار','u'],['P610','أعلى نقطة','i'],['P1082','السكان','q'],['P2046','المساحة','q'],['P2131','الناتج المحلي','q'],['P1081','مؤشر التنمية البشرية','q'],['P2250','متوسط العمر المتوقع','q'],['P2044','الارتفاع','q'],['P2043','الطول','q'],['P625','الإحداثيات','g'],
+['P159','المقر','i'],['P112','المؤسس','i'],['P169','المدير التنفيذي','i'],['P127','المالك','i'],['P452','القطاع','i'],['P1128','عدد الموظفين','q'],
+['P50','المؤلف','i'],['P57','المخرج','i'],['P161','الممثلون','i'],['P577','تاريخ النشر','t'],['P123','الناشر','i'],['P364','اللغة الأصلية','i'],['P2047','المدة','q'],
+['P397','يدور حول','i'],['P398','أقماره','i'],['P2120','نصف القطر','q'],['P2146','فترة المدار','q']];
+// حقول إضافية: صيغة «معرّف|التسمية|النوع» (i عنصر · q كمية · t تاريخ · u نص) — أضف سطرًا جديدًا لأي حقل
+`P735|الاسم الأول|i
+P734|اسم العائلة|i
+P1559|الاسم بلغته|u
+P1038|الأقارب|i
+P451|الشريك غير المتزوج|i
+P53|العائلة|i
+P97|اللقب النبيل|i
+P1196|طريقة الوفاة|i
+P1050|الحالة الصحية|i
+P2632|مكان الاحتجاز|i
+P937|مكان العمل|i
+P1066|تتلمذ على يد|i
+P802|الطلاب|i
+P737|تأثر بـ|i
+P1411|ترشيحات|i
+P1344|شارك في|i
+P793|أحداث مهمة|i
+P1317|فترة النشاط|t
+P1340|لون العينين|i
+P1884|لون الشعر|i
+P2002|حساب تويتر|u
+P2003|حساب إنستغرام|u
+P1448|الاسم الرسمي|u
+P1705|الاسم المحلي|u
+P1622|جهة القيادة|i
+P2853|نوع القابس الكهربائي|i
+P2852|رقم الطوارئ|u
+P3075|الدين الرسمي|i
+P1906|منصب رئيس الدولة|i
+P1198|معدل البطالة|q
+P1279|معدل التضخم|q
+P2132|نصيب الفرد من الناتج|q
+P2299|نصيب الفرد (القوة الشرائية)|q
+P1125|معامل جيني|q
+P6897|معدل القراءة والكتابة|q
+P1589|أخفض نقطة|i
+P2927|نسبة المياه من المساحة|q
+P150|التقسيمات الإدارية|i
+P1376|عاصمة لـ|i
+P138|سُمّي نسبةً إلى|i
+P281|الرمز البريدي|u
+P2936|اللغات المستخدمة|i
+P1435|التصنيف التراثي|i
+P84|المهندس المعماري|i
+P149|الطراز المعماري|i
+P1619|تاريخ الافتتاح|t
+P2139|الإيرادات|q
+P2295|صافي الربح|q
+P2403|إجمالي الأصول|q
+P355|الشركات التابعة|i
+P749|الجهة الأم|i
+P1830|يملك|i
+P1454|الشكل القانوني|i
+P740|مكان التأسيس|i
+P1037|المدير|i
+P488|رئيس المجلس|i
+P3320|أعضاء المجلس|i
+P414|البورصة|i
+P249|رمز التداول|u
+P1056|المنتجات|i
+P58|كاتب السيناريو|i
+P86|الملحن|i
+P162|المنتج|i
+P272|شركة الإنتاج|i
+P495|بلد المنشأ|i
+P2130|التكلفة|q
+P2142|إيرادات شباك التذاكر|q
+P840|مكان الأحداث|i
+P179|ضمن سلسلة|i
+P155|يسبقه|i
+P156|يليه|i
+P1104|عدد الصفحات|q
+P407|لغة العمل|i
+P291|مكان النشر|i
+P674|الشخصيات|i
+P921|الموضوع الرئيسي|i
+P144|مقتبس عن|i
+P2437|عدد المواسم|q
+P1113|عدد الحلقات|q
+P175|المؤدي|i
+P264|شركة التسجيل|i
+P1433|نُشر في|i
+P1086|العدد الذري|q
+P246|الرمز الكيميائي|u
+P274|الصيغة الكيميائية|u
+P2102|نقطة الغليان|q
+P2101|نقطة الانصهار|q
+P2054|الكثافة|q
+P2175|يعالج|i
+P780|الأعراض|i
+P828|السبب|i
+P1995|التخصص الطبي|i
+P225|الاسم العلمي|u
+P105|الرتبة التصنيفية|i
+P171|التصنيف الأعلى|i
+P141|حالة الحفظ|i
+P183|متوطن في|i
+P2049|العرض|q
+P2386|القطر|q
+P2583|البعد عن الأرض|q
+P61|المكتشف أو المخترع|i
+P575|تاريخ الاكتشاف|t
+P215|الفئة الطيفية|i
+P2060|اللمعان|q
+P376|يقع على|i
+P585|تاريخ الحدث|t
+P580|تاريخ البدء|t
+P276|الموقع|i
+P710|المشاركون|i
+P1120|عدد الوفيات|q
+P1339|عدد الجرحى|q
+P1590|عدد الضحايا|q
+P3342|شخصيات مرتبطة|i
+P118|الدوري|i
+P413|المركز في الملعب|i
+P1532|يمثل|i
+P286|المدرب|i
+P115|الملعب|i
+P1346|الفائز|i
+P2341|موطن اللغة|i
+P282|نظام الكتابة|i
+P1098|عدد الناطقين|q
+P218|رمز اللغة|u`.split('\n').forEach(l=>PR.push(l.split('|')));
+const SK=/^(المراجع|مراجع|وصلات خارجية|روابط خارجية|انظر أيضا|انظر أيضًا|هوامش|مصادر|ملاحظات|References|External links|See also|Notes|Further reading|Sources|Bibliography|Citations)$/i;
+function secs(x){const a=x.split(/\n={2,}\s*(.+?)\s*={2,}\n/),o=[['',(a[0]||'').trim()]];for(let i=1;i<a.length;i+=2){const b=(a[i+1]||'').trim(),h=a[i].trim();if(b&&!SK.test(h))o.push([h,b])}return o}
+async function article(t){
+  const g=async x=>Object.values(((await(await fetch(AR()+x)).json()).query||{}).pages||{})[0];
+  let p=await g('titles='+encodeURIComponent(t));
+  if(!p||p.missing!==undefined||(p.pageprops||{}).disambiguation!==undefined)p=await g('generator=search&gsrlimit=1&gsrsearch='+encodeURIComponent(t))||p;
+  return p&&p.missing===undefined?p:null}
+async function wd(id){
+  const e=((await(await fetch(WD+'props=claims&ids='+id)).json()).entities||{})[id],cl=(e&&e.claims)||{},ids=new Set(),R=[];
+  const tq=c=>{const q=((c.qualifiers||{}).P585||[])[0];return q&&q.datavalue?q.datavalue.value.time:''};
+  PR.forEach(([p,l,k])=>{
+    let a=(cl[p]||[]).filter(c=>c.rank!=='deprecated'&&c.mainsnak.snaktype==='value');
+    if(!a.length)return;const n=a.length;
+    if(k==='q')a.sort((x,y)=>((y.rank==='preferred')-(x.rank==='preferred'))||tq(y).localeCompare(tq(x)));
+    a=a.slice(0,k==='t'||k==='q'||k==='c'?1:5);ids.add(p);
+    if(k!=='c')a.forEach(c=>{const v=c.mainsnak.datavalue.value;
+      if(k==='i'||k==='s')ids.add(v.id);
+      if(k==='q'&&String(v.unit).includes('/Q'))ids.add(v.unit.split('/').pop())});
+    R.push([p,l,k,a,n]);
+  });
+  const E={},A=[...ids],f=(g,a)=>fetch(WD+'props=labels&languages='+g+'&ids='+a.join('|')).then(r=>r.json());
+  await Promise.all(Array.from({length:Math.ceil(A.length/50)},async(_,n)=>{const a=A.slice(n*50,n*50+50);let j=await f(LG+'|en',a);if(!j.entities)j=await f('en',a);Object.assign(E,j.entities||{})}));
+  const lb=i=>{const L=(E[i]||{}).labels||{};return(L[LG]||L.en||{}).value||''};
+  const out=[];
+  R.forEach(([p,l,k,a,n])=>{
+    const vs=k==='c'?[nf(n)]:a.map(c=>{const v=c.mainsnak.datavalue.value;
+      if(k==='t')return fd(v);
+      if(k==='u')return typeof v==='string'?v:(v.text||'');
+      if(k==='g')return v.latitude.toFixed(4)+', '+v.longitude.toFixed(4);
+      if(k==='q'){const u=String(v.unit).includes('/Q')?lb(v.unit.split('/').pop()):'';return nf(v.amount,{maximumFractionDigits:2})+(u?' '+u:'')}
+      let s=lb(v.id);
+      if(k==='s'&&s){const g=z=>((c.qualifiers||{})[z]||[]).map(x=>x.datavalue?fd(x.datavalue.value):'').filter(Boolean)[0],w=[];
+        if(g('P580'))w.push(tr('wed')+g('P580'));if(g('P582'))w.push(tr('wend')+g('P582'));
+        if(w.length)s+=' ('+w.join('، ')+')'}
+      return s}).filter(Boolean);
+    if(vs.length)out.push([(LG==='ar'?l:lb(p)+(k==='c'?' (#)':''))||l,vs.join('، ')]);
+  });
+  return out}
+function lb(src){const d=el('div','lb'),i=el('img');i.src=src;d.appendChild(i);d.onclick=()=>d.remove();document.body.appendChild(d)}
+async function gallery(q,box,h,my){
+  const j=await(await fetch('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=18&prop=imageinfo&iiprop=url|mime&iiurlwidth=640&gsrsearch='+encodeURIComponent(q+' filetype:bitmap'))).json();
+  if(my!==dtok)return;
+  Object.values((j.query||{}).pages||{}).forEach(p=>{const ii=(p.imageinfo||[])[0];if(!ii||!/^image\/(jpeg|png|webp)$/.test(ii.mime))return;
+    const i=el('img');i.src=ii.thumburl;i.alt=q;i.loading='lazy';i.onclick=()=>lb(ii.thumburl);box.appendChild(i);h.hidden=false})}
+async function related(t,box,h,my){
+  const r=await wk('generator=search&gsrlimit=8&gsrsearch='+encodeURIComponent('morelike:'+t));if(my!==dtok)return;
+  r.pages.filter(p=>p.title!==t&&!ST.hid[K(p.title)]&&!GH[K(p.title)]).forEach(p=>{const x=(p.extract||'').trim();box.appendChild(item(tr('art'),p.title,'',x.slice(0,110)+(x.length>110?'…':''),null,(p.thumbnail||{}).source,x));h.hidden=false})}
+async function openD(t){
+  const my=++dtok,k=K(t),d=LG==='ar'?D.find(x=>x[1]===t):0,c=ST.sav[k]||{};
+  const r=REG[k]||(d?{en:d[2],sub:d[3],facts:d[4].split('|')}:{en:'',sub:c.s||''});
+  MAIN.style.display='none';PG.hidden=false;PG.innerHTML='';scrollTo(0,0);
+  if(GH[k]){const b=el('a','bk',tr('back'));b.href='#';b.onclick=e=>{e.preventDefault();location.hash=''};PG.append(b,msg(W('حذفت الإدارة هذه المقالة','The admins removed this article')));return}
+  const bk=el('a','bk',tr('back')),ac=el('div','ac'),im=el('div'),pt=el('div','pt'),h1=el('h2','',tr('facts')),fx=el('div','fx'),h2=el('h2','',tr('about')),tx=el('p','tx',r.text||r.sub||''),sb=el('div'),gh=el('h2','',tr('imgs')),gl=el('div','gl'),rh=el('h2','',tr('rel')),rl=el('div');
+  bk.href='#';bk.onclick=e=>{e.preventDefault();nav?history.back():(location.hash='')};
+  pt.append(el('span','',t),el('span','e',r.en||''));
+  const cur={x:[],r:[],i:''},have=new Set(),row=(l,v)=>{if(l&&have.has(l))return;have.add(l);const e=el('div','fr');if(l)e.appendChild(el('b','',l));e.appendChild(el('span','',v));fx.appendChild(e);h1.hidden=false};
+  acts(ac,null,t,r.sub,r.img||c.i,LG,()=>({x:cur.x,r:cur.r,i:cur.i}));
+  h1.hidden=gh.hidden=rh.hidden=true;(r.facts||[]).forEach(f=>{const i=f.indexOf(':');i>0?row(f.slice(0,i).trim(),f.slice(i+1).trim()):row('',f)});
+  h2.hidden=!tx.textContent;PG.append(bk,ac,im,pt,h1,fx,h2,tx,sb,gh,gl,rh,rl,cmBox(t,LG));
+  const ED={x:''},applyEd=()=>{tx.textContent='';h2.hidden=true;sb.innerHTML='';sb.appendChild(el('p','nt',W('نسخة معدّلة من الإدارة','Edited by the admins')));
+    ED.x.split(/\n{2,}/).forEach(b=>{b=b.trim();if(!b)return;sb.appendChild(b.startsWith('## ')?el('h2','',b.slice(3)):el('p','tx',b))})};
+  fb().then(async F=>{const d=(await F.getDoc(F.doc(F.db,'arts',aid(t,LG)))).data();if(my!==dtok||!d||!d.ed)return;ED.x=d.ed.x;applyEd()}).catch(()=>{});
+  const eb=el('button','edb',W('✏️ تعديل المقالة','✏️ Edit article'));eb.hidden=!AD;ac.appendChild(eb);
+  eb.onclick=()=>{const n=el('div'),ta=el('textarea','cs'),sv=el('button','more',W('حفظ التعديل','Save edit')),rs=el('button','more',W('إلغاء التعديل (العودة للأصل)','Revert to original'));
+    ta.rows=14;ta.maxLength=60000;ta.value=ED.x||(cur.x.length?cur.x.map(([h,b],i)=>(i&&h?'## '+h+'\n\n':'')+b).join('\n\n'):tx.textContent);
+    n.append(el('h2','',t),el('p','s',W('افصل الفقرات بسطر فارغ، وابدأ عنوان القسم بـ ##','Separate paragraphs with a blank line; start a section title with ##')),ta,sv,rs);
+    sv.onclick=async()=>{const x=ta.value.trim();if(!x)return;try{const F=await fb();await F.setDoc(F.doc(F.db,'arts',aid(t,LG)),{t,l:LG,ed:{x,ts:F.serverTimestamp()}},{merge:true});ED.x=x;applyEd();closeM();tt(W('تم الحفظ','Saved'))}catch(e){tt(W('تعذّر الحفظ','Could not save'))}};
+    rs.onclick=async()=>{try{const F=await fb();await F.setDoc(F.doc(F.db,'arts',aid(t,LG)),{ed:F.deleteField()},{merge:true});closeM();openD(t)}catch(e){tt(W('تعذّر التنفيذ','Failed'))}};
+    modal(n)};
+  const showImg=u=>{if(!u||im.firstChild)return;cur.i=u;const i=el('img','hi');i.src=u;i.alt=t;i.onclick=()=>lb(u);im.appendChild(i)};
+  const showS=S=>{cur.x=S;if(ED.x)return;if(S[0]&&S[0][1]){tx.textContent=S[0][1];h2.hidden=false}S.slice(1,21).forEach(([h,b])=>sb.append(el('h2','',h),el('p','tx',b.slice(0,3000))))};
+  const addR=a=>{cur.r=a;a.forEach(([l,v])=>row(l,v))};
+  const cached=()=>{showImg(c.i);showS(c.x);addR(c.r||[])};
+  try{
+    const p=await article(t);if(my!==dtok)return;
+    if(!p){if(c.x)cached();else if(!tx.textContent&&!ED.x){tx.textContent=tr('nopage');h2.hidden=false}return}
+    showImg((p.thumbnail||{}).source);showS(secs(p.extract||''));
+    const en=((p.langlinks||[])[0]||{})['*']||p.title;
+    gallery(en,gl,gh,my).catch(()=>{});related(p.title,rl,rh,my).catch(()=>{});
+    const q=(p.pageprops||{}).wikibase_item;
+    if(q){const rows=await wd(q);if(my!==dtok)return;addR(rows)}
+  }catch(e){if(my!==dtok)return;if(c.x&&!cur.x.length)cached();else if(!cur.x.length)PG.appendChild(el('p','empty',tr('net')))}
+}
+function closeD(){dtok++;nav=false;if(PG.hidden)return;PG.hidden=true;PG.innerHTML='';MAIN.style.display='';scrollTo(0,lastY)}
+function route(){
+  const m=/^#\/([^/]+)\/(.*)$/.exec(location.hash);
+  if(m){if(!first&&PG.hidden){nav=true;lastY=scrollY}if(m[1]!==LG){LG=m[1];try{localStorage.setItem('lg',LG)}catch(e){}ui()}openD(decodeURIComponent(m[2]))}else closeD();
+  first=false}
+
+const W=(a,e)=>LG==='ar'?a:e;
+const J=async u=>{const r=await fetch(u);if(!r.ok)throw 0;return r.json()};
+const busy=()=>el('p','empty',tr('load')),msg=t=>el('p','empty',t);
+function modal(n){const d=el('div','lb'),m=el('div','md'),x=el('button','mx','×');x.onclick=()=>d.remove();d.onclick=e=>{if(e.target===d)d.remove()};m.append(x,n);d.appendChild(m);document.body.appendChild(d)}
+function sub(o,cur,fn){const n=el('div','sub');o.forEach(([k,t])=>{const b=el('button','',t);b.setAttribute('aria-pressed',k===cur);b.onclick=()=>fn(k);n.appendChild(b)});return n}
+function sbox(label,ph,fn,val){const f=el('div','sr'),i=el('input'),b=el('button','',label);i.type='search';i.placeholder=ph;i.value=val||'';const go=()=>fn(i.value.trim());b.onclick=go;i.onkeydown=e=>{if(e.key==='Enter')go()};f.append(i,b);return f}
+const ext=(u,t)=>{const a=el('a','more',t);a.href=u;a.target='_blank';a.rel='noopener';return a};
+const rows=(a)=>{const f=el('div','fx');a.forEach(([x,y])=>{if(!y)return;const r=el('div','fr');r.append(el('b','',x),el('span','',y));f.appendChild(r)});return f};
+const hav=(a,b,c,d)=>{const r=Math.PI/180,x=Math.sin((c-a)*r/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;return 12742*Math.asin(Math.sqrt(x))};
+// ---------- الخريطة ----------
+let MAPO=null,LF=null;
+const leaflet=()=>LF||(LF=new Promise((ok,no)=>{const c=el('link');c.rel='stylesheet';c.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';document.head.appendChild(c);const s=el('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';s.onload=ok;s.onerror=()=>{LF=null;no()};document.head.appendChild(s)}));
+async function mkMap(div,c,z){await leaflet();if(MAPO)MAPO.remove();
+  const m=L.map(div).setView(c||[25,20],z||2),a=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(m),b=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'});
+  L.control.layers({[W('خريطة','Map')]:a,[W('قمر صناعي','Satellite')]:b,[W('تضاريس','Terrain')]:L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17}),[W('داكنة','Dark')]:L.tileLayer('https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',{maxZoom:19})}).addTo(m);L.control.scale().addTo(m);m.attributionControl.setPrefix('');MAPO=m;return m}
+function map(){
+  const mp=el('div','map'),res=el('div');let g=null;
+  const mm=mkMap(mp);
+  const show=async p=>{const M=await mm;if(g)g.remove();
+    g=p.geojson&&/Polygon/.test(p.geojson.type)?L.geoJSON(p.geojson,{style:{color:'#e63946',weight:3,fillOpacity:.18}}):L.circleMarker([+p.lat,+p.lon],{radius:10,color:'#e63946',fillOpacity:.8});
+    g.addTo(M).bindPopup(p.display_name);const b=p.boundingbox;M.fitBounds([[+b[0],+b[2]],[+b[1],+b[3]]],{maxZoom:14})};
+  const me=el('button','',W('موقعي','My location'));me.onclick=()=>navigator.geolocation&&navigator.geolocation.getCurrentPosition(async p=>{const M=await mm;M.setView([p.coords.latitude,p.coords.longitude],14);L.circleMarker([p.coords.latitude,p.coords.longitude],{radius:9,color:'#1d4ed8',fillOpacity:.8}).addTo(M)});
+  const ac=el('div','ac');ac.appendChild(me);
+  list.append(sbox(W('بحث','Search'),W('ابحث عن بلد أو مدينة أو مكان…','Search a country, city or place…'),async q=>{if(!q)return;res.innerHTML='';res.appendChild(busy());
+    try{const a=await J('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=8&polygon_geojson=1&accept-language='+LG+'&q='+encodeURIComponent(q));res.innerHTML='';
+      if(!a.length)return res.appendChild(msg(tr('none')));
+      a.forEach(p=>{const b=el('a','hq',p.display_name);b.href='#';b.onclick=e=>{e.preventDefault();show(p);mp.scrollIntoView({behavior:'smooth'})};res.appendChild(b)});show(a[0])}
+    catch(e){res.innerHTML='';res.appendChild(msg(tr('net')))}}),ac,res,mp);
+  const pi=el('div','pi');list.appendChild(pi);mm.then(M=>M.on('click',e=>pinfo(M,e.latlng,pi))).catch(()=>list.insertBefore(msg(tr('net')),mp));
+}
+// ---------- الكتب ----------
+const BC=[['religion','ديني','Religion'],['romance','رومانسي','Romance'],['self-help','حياة وتطوير ذات','Life & self-help'],['biography','سير وتراجم','Biography'],['history','تاريخ','History'],['science fiction','خيال علمي','Sci-fi'],['fantasy','فانتازيا','Fantasy'],['mystery','غموض وجريمة','Mystery'],['poetry','شعر','Poetry'],['philosophy','فلسفة','Philosophy'],['children','أطفال','Children'],['science','علوم','Science'],['cooking','طبخ','Cooking'],['business','أعمال','Business'],['health','صحة','Health'],['travel','سفر','Travel']];
+// ---------- الفضاء ----------
+const SP=[['الشمس','Sun','sun'],['الأرض','Earth','earth from space'],['القمر','Moon','moon'],['المريخ','Mars','mars'],['المشتري','Jupiter','jupiter'],['زحل','Saturn','saturn'],['الثقوب السوداء','Black hole','black hole'],['المجرات','Galaxy','galaxy'],['السدم','Nebula','nebula'],['محطة الفضاء الدولية','International Space Station','international space station'],['رواد الفضاء','Astronaut','astronaut'],['تلسكوب جيمس ويب','James Webb Space Telescope','james webb'],['المذنبات','Comet','comet'],['الصواريخ','Rocket','rocket launch']];
+let SS=0;
+function space(){
+  const my=tok,gal=el('div','gl'),iss=el('div'),b=el('button','',W('تحديث','Refresh'));
+  const upd=async()=>{iss.innerHTML='';try{const j=await J('https://api.wheretheiss.at/v1/satellites/25544');iss.appendChild(rows([[W('خط العرض','Latitude'),j.latitude.toFixed(3)],[W('خط الطول','Longitude'),j.longitude.toFixed(3)],[W('الارتفاع','Altitude'),nf(j.altitude,{maximumFractionDigits:0})+' km'],[W('السرعة','Speed'),nf(j.velocity,{maximumFractionDigits:0})+' km/h']]))}catch(e){iss.appendChild(msg(tr('net')))}};
+  b.onclick=upd;const ac=el('div','ac');ac.appendChild(b);
+  list.append(sub(SP.map((s,i)=>[i,W(s[0],s[1])]),SS,k=>{SS=k;render()}),el('h2','',W('موقع محطة الفضاء الدولية الآن','International Space Station right now')),iss,ac,el('h2','',W('صور من الفضاء','Space images')),gal);
+  upd();
+  (async()=>{try{const j=await J('https://images-api.nasa.gov/search?media_type=image&page_size=30&q='+encodeURIComponent(SP[SS][2]));if(my!==tok)return;
+    j.collection.items.forEach(it=>{const d=it.data[0],u=(it.links||[])[0];if(!u)return;const i=el('img');i.src=u.href;i.alt=d.title;i.loading='lazy';
+      i.onclick=()=>{const n=el('div'),big=el('img','hi');big.src=u.href;n.append(el('h2','',d.title),big,el('p','tx',(d.description||'').slice(0,1500)));modal(n)};gal.appendChild(i)})}catch(e){gal.appendChild(msg(tr('net')))}})();
+  wiki(W(SP[SS][0],SP[SS][1]),1)}
+// ---------- قصص دينية ----------
+const SD={q:['قصص القرآن','Quran stories',['آدم','نوح','إبراهيم','إسماعيل','يوسف','موسى','عيسى','مريم','يونس','أيوب','سليمان','داود','أصحاب الكهف','ذو القرنين','لقمان','صالح','هود','لوط'],['Adam in Islam','Noah in Islam','Abraham in Islam','Ishmael in Islam','Joseph in Islam','Moses in Islam','Jesus in Islam','Mary in Islam','Jonah in Islam','Job in Islam','Solomon in Islam','David in Islam','Seven Sleepers','Dhul-Qarnayn','Luqman','Saleh in Islam','Hud in Islam','Lot in Islam']],
+ot:['أنبياء بني إسرائيل (العهد القديم)','Prophets of Israel (Old Testament)',['إسحاق','يعقوب','هارون','إلياس','اليسع','شعيب','طالوت وجالوت','قارون','موسى والخضر'],['Isaac in Islam','Jacob in Islam','Aaron in Islam','Elijah in Islam','Elisha in Islam','Shuaib','Talut','Qarun','Moses and Khidr']],
+nt:['عيسى ابن مريم (العهد الجديد)','Jesus (New Testament)',['زكريا','يحيى','مريم','عيسى ابن مريم','الحواريون','المائدة','رفع عيسى','عيسى في الإسلام','الإنجيل'],['Zechariah in Islam','Yahya','Mary in Islam','Jesus in Islam','Hawariyyun','Table spread (Al-Maidah)','Ascension of Jesus in Islam','Second Coming of Jesus in Islam','Injil']],
+su:['السنة النبوية','Prophetic Sunnah',['الهجرة النبوية','الإسراء والمعراج','غزوة بدر','غزوة أحد','غزوة الخندق','صلح الحديبية','فتح مكة','حجة الوداع','غار حراء','عام الفيل','هجرة الحبشة','حادثة الإفك'],['Hijra (Islam)','Isra and Mi\'raj','Battle of Badr','Battle of Uhud','Battle of the Trench','Treaty of Hudaybiyyah','Conquest of Mecca','Farewell Pilgrimage','Cave of Hira','Year of the Elephant','Migration to Abyssinia','Incident of Ifk']]};
+let SK2='q';
+function stories(){
+  list.appendChild(sub(Object.entries(SD).map(([k,v])=>[k,W(v[0],v[1])]),SK2,k=>{SK2=k;render()}));
+  const v=SD[SK2];if(/^(ot|nt)$/.test(SK2))list.appendChild(el('p','nt',W('ملاحظة: تُعرض قصص الأنبياء كما وردت في القرآن الكريم والسنة الصحيحة، تنزيهًا لهم عن الشرك والمعاصي. وما في كتب أهل الكتاب يُعرض على القرآن والسنة: ما وافقهما قُبل، وما خالفهما رُدّ (كالتثليث ونسبة الكبائر إلى الأنبياء)، وما سُكت عنه لا يُصدَّق ولا يُكذَّب. المقالات من مصادر عامة وليست فتوى، فارجع إلى أهل العلم للتثبت.','Note: stories of the prophets are presented as told in the Quran and authentic Sunnah, free of shirk and of any sins ascribed to the prophets. Earlier scriptures are weighed against them: what agrees is accepted, what contradicts (such as the Trinity or major sins attributed to prophets) is rejected, and what is not addressed is neither affirmed nor denied. Articles come from general sources and are not a fatwa; consult scholars to verify.')));(LG==='ar'?v[2]:v[3]).forEach(t=>list.appendChild(item(W(v[0],v[1]),t,'','')))}
+// ---------- الإسلاميات ----------
+const IS={t:'v',ed:'ara-nawawi',rq:null},HC={},QA='https://api.alquran.cloud/v1/';
+const HB=[['ara-nawawi','الأربعون النووية','Forty Hadith (Nawawi)'],['ara-bukhari','صحيح البخاري','Sahih al-Bukhari'],['ara-muslim','صحيح مسلم','Sahih Muslim'],['ara-abudawud','سنن أبي داود','Sunan Abu Dawud'],['ara-tirmidhi','جامع الترمذي','Jami at-Tirmidhi'],['ara-nasai','سنن النسائي','Sunan an-Nasai'],['ara-ibnmajah','سنن ابن ماجه','Sunan Ibn Majah'],['ara-malik','موطأ مالك','Muwatta Malik']];
+const RT=[['الصلاة','Salah'],['الزكاة','Zakat'],['الصيام','Sawm'],['الحج','Hajj'],['التوحيد','Tawhid'],['الفقه الإسلامي','Fiqh'],['السيرة النبوية','Prophetic biography'],['أركان الإسلام','Five Pillars of Islam'],['العقيدة الإسلامية','Aqidah'],['علوم القرآن','Quranic sciences'],['علم الحديث','Hadith studies'],['الخلفاء الراشدون','Rashidun Caliphate']];
+async function tafsir(ref,box){box.innerHTML='';box.appendChild(busy());
+  try{const j=await J(QA+'ayah/'+ref+'/editions/ar.muyassar,ar.jalalayn,ar.qurtubi'),nm={'ar.muyassar':'التفسير الميسر','ar.jalalayn':'تفسير الجلالين','ar.qurtubi':'تفسير القرطبي'};box.innerHTML='';
+    j.data.forEach(d=>box.append(el('h2','',nm[d.edition.identifier]||d.edition.name),el('p','tx',d.text)))}catch(e){box.innerHTML='';box.appendChild(msg(tr('net')))}}
+function verse(text,head,ref,open){const c=el('div','vs'),m=el('div','ac'),tb=el('div'),b=el('button','',W('تفسير','Tafsir'));b.onclick=()=>tafsir(ref,tb);m.appendChild(b);c.append(el('b','',head),el('p','tx',text),m,tb);if(open)tafsir(ref,tb);return c}
+function islam(){
+  const out=el('div');
+  list.appendChild(sub([['v',W('آيات','Verses')],['t',W('تفسير','Tafsir')],['h',W('أحاديث','Hadith')],['i',W('معلومات دينية','Info')]],IS.t,k=>{IS.t=k;render()}));
+  if(IS.t==='v')list.append(sbox(W('بحث','Search'),W('اكتب كلمة من الآية…','Type a word of the verse…'),async q=>{if(!q)return;out.innerHTML='';out.appendChild(busy());
+    try{const j=await J(QA+'search/'+encodeURIComponent(q)+'/all/quran-simple');out.innerHTML='';const m=(j.data&&j.data.matches)||[];
+      if(!m.length)return out.appendChild(msg(tr('none')));out.appendChild(el('h2','',W('عدد النتائج: ','Results: ')+m.length));
+      m.slice(0,40).forEach(x=>out.appendChild(verse(x.text,x.surah.name+' · '+x.numberInSurah,x.number)))}catch(e){out.innerHTML='';out.appendChild(msg(tr('net')))}}),out);
+  if(IS.t==='t'){const sel=el('select','cs'),ay=el('input');ay.type='number';ay.min=1;ay.value=1;ay.className='cs';const go=el('button','more',W('اعرض التفسير','Show tafsir'));go.onclick=async()=>{out.innerHTML='';out.appendChild(busy());
+      try{const j=await J(QA+'ayah/'+sel.value+':'+ay.value+'/quran-simple');out.innerHTML='';out.appendChild(verse(j.data.text,j.data.surah.name+' · '+j.data.numberInSurah,sel.value+':'+ay.value,1))}catch(e){out.innerHTML='';out.appendChild(msg(tr('none')))}};
+    list.append(sel,ay,go,out);J(QA+'surah').then(j=>j.data.forEach(s=>{const o=el('option','',s.number+' · '+s.name);o.value=s.number;sel.appendChild(o)})).catch(()=>sel.appendChild(el('option','',tr('net'))))}
+  if(IS.t==='h'){const sel=el('select','cs');HB.forEach(h=>{const o=el('option','',W(h[1],h[2]));o.value=h[0];sel.appendChild(o)});sel.value=IS.ed;sel.onchange=()=>{IS.ed=sel.value};
+    list.append(sel,sbox(W('بحث','Search'),W('اكتب كلمة من الحديث…','Type a word of the hadith…'),async q=>{out.innerHTML='';out.appendChild(busy());
+      try{if(!HC[IS.ed])HC[IS.ed]=(await J('https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/'+IS.ed+'.min.json')).hadiths;
+        const ws=norm(q).split(/\s+/).filter(Boolean),r=ws.length?HC[IS.ed].filter(h=>{const t=norm(h.text||'');return ws.every(w=>t.includes(w))}):HC[IS.ed].slice(0,30);out.innerHTML='';
+        if(!r.length)return out.appendChild(msg(tr('none')));out.appendChild(el('h2','',W('عدد النتائج: ','Results: ')+r.length));
+        r.slice(0,40).forEach(h=>{const c=el('div','vs');c.append(el('b','',W(HB.find(x=>x[0]===IS.ed)[1],HB.find(x=>x[0]===IS.ed)[2])+' · '+h.hadithnumber),el('p','tx',h.text));
+          if((h.grades||[]).length)c.appendChild(el('span','e',h.grades.map(g=>g.name+': '+g.grade).join(' · ')));out.appendChild(c)})}
+      catch(e){out.innerHTML='';out.appendChild(msg(tr('net')))}}),out)}
+  if(IS.t==='i'){list.append(sbox(W('بحث','Search'),W('ابحث في المعلومات الدينية…','Search religious information…'),q=>{IS.rq=q;render()},IS.rq||''),sub(RT.map(r=>[W(r[0],r[1]),W(r[0],r[1])]),IS.rq,k=>{IS.rq=k;render()}));if(IS.rq)wiki(IS.rq,0)}}
+// ---------- الطبخ ----------
+const CK=[['Chicken','دجاج'],['Beef','لحم بقري'],['Lamb','لحم ضأن'],['Seafood','مأكولات بحرية'],['Pasta','معكرونة'],['Dessert','حلويات'],['Breakfast','فطور'],['Starter','مقبلات'],['Side','أطباق جانبية'],['Vegetarian','خضار'],['Vegan','نباتي'],['Goat','ماعز'],['Miscellaneous','متنوع']],CS={c:'Chicken',q:''};
+function cook(){
+  const my=tok,g=el('div','bg');
+  list.append(sbox(W('بحث','Search'),W('ابحث بالإنجليزية: Chicken, Cake…','Search a dish: Chicken, Cake…'),q=>{CS.q=q;render()},CS.q),sub(CK.map(c=>[c[0],W(c[1],c[0])]),CS.q?'':CS.c,k=>{CS.c=k;CS.q='';render()}),g);g.appendChild(busy());
+  (async()=>{try{const j=await J('https://www.themealdb.com/api/json/v1/1/'+(CS.q?'search.php?s='+encodeURIComponent(CS.q):'filter.php?c='+CS.c));if(my!==tok)return;g.innerHTML='';
+    if(!(j.meals||[]).length)g.appendChild(msg(tr('none')));
+    (j.meals||[]).forEach(m=>{const a=el('a','bk2'),i=el('img');a.href='#';i.src=m.strMealThumb;i.loading='lazy';i.alt=m.strMeal;a.append(i,el('b','',m.strMeal));
+      a.onclick=async e=>{e.preventDefault();const n=el('div'),p=el('p','tx',tr('load'));n.append(el('h2','',m.strMeal),p);modal(n);
+        try{const d=(await J('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+m.idMeal)).meals[0],ing=[];for(let k=1;k<=20;k++)if(d['strIngredient'+k])ing.push([d['strIngredient'+k],d['strMeasure'+k]]);
+          n.innerHTML='';const big=el('img','hi');big.src=d.strMealThumb;n.append(el('h2','',d.strMeal),big,el('p','',[d.strCategory,d.strArea].filter(Boolean).join(' · ')),el('h2','',W('المكونات','Ingredients')),rows(ing),el('h2','',W('الطريقة','Method')),el('p','tx',d.strInstructions||''))}catch(x){p.textContent=tr('net')}};
+      g.appendChild(a)})}catch(e){g.innerHTML='';g.appendChild(msg(tr('net')))}})()}
+// ---------- العلوم ----------
+const SC={p:['فيزياء','Physics',['الجاذبية','النسبية','ميكانيكا الكم','الكهرومغناطيسية','الديناميكا الحرارية','البصريات','قوانين نيوتن للحركة','الانفجار العظيم','الطاقة النووية','الضوء','الصوت','الجسيمات الأولية'],['Gravity','Theory of relativity','Quantum mechanics','Electromagnetism','Thermodynamics','Optics','Newton\'s laws of motion','Big Bang','Nuclear power','Light','Sound','Elementary particle']],
+c:['كيمياء','Chemistry',['الجدول الدوري','الرابطة الكيميائية','الحمض','الأكسدة والاختزال','الكيمياء العضوية','الماء','الهيدروجين','الكربون','الأكسجين','المحلول','التفاعل الكيميائي','الذرة'],['Periodic table','Chemical bond','Acid','Redox','Organic chemistry','Water','Hydrogen','Carbon','Oxygen','Solution','Chemical reaction','Atom']],
+b:['أحياء','Biology',['الخلية','الحمض النووي','التطور','التمثيل الضوئي','الجهاز المناعي','الدماغ','الجينوم','الفيروس','البكتيريا','علم البيئة','التنوع البيولوجي','الجهاز الدوري'],['Cell (biology)','DNA','Evolution','Photosynthesis','Immune system','Brain','Genome','Virus','Bacteria','Ecology','Biodiversity','Circulatory system']]};
+let SCK='p';
+function sci(){
+  list.append(sbox(W('بحث','Search'),W('ابحث في العلوم…','Search science…'),q=>{if(q){list.querySelectorAll('.card,section').forEach(x=>x.remove());wiki(q,0)}}),sub(Object.entries(SC).map(([k,v])=>[k,W(v[0],v[1])]),SCK,k=>{SCK=k;render()}));
+  const v=SC[SCK];(LG==='ar'?v[2]:v[3]).forEach(t=>list.appendChild(item(W(v[0],v[1]),t,'','')))}
+// ---------- السجلات الرسمية ----------
+const T3={ar:'ara',fr:'fra',es:'spa',de:'deu',ru:'rus',zh:'zho',ja:'jpn',ko:'kor',pt:'por',it:'ita',nl:'nld',pl:'pol',tr:'tur',fa:'per',ur:'urd'};
+const cn=c=>(c.translations[T3[LG]]||{}).common||c.name.common;
+const SV=[['police','الشرطة','Police','"amenity"="police"'],['hospital','المستشفيات','Hospitals','"amenity"="hospital"'],['fire','الإطفاء','Fire stations','"amenity"="fire_station"'],['pharmacy','الصيدليات','Pharmacies','"amenity"="pharmacy"'],['gov','المكاتب الحكومية','Government offices','"office"="government"'],['court','المحاكم','Courts','"amenity"="courthouse"'],['town','البلديات','Town halls','"amenity"="townhall"'],['post','مكاتب البريد','Post offices','"amenity"="post_office"'],['embassy','السفارات','Embassies','"amenity"="embassy"']];
+const GS={c:'EG',s:'police'};let GC=null;
+async function gov(){
+  const my=tok,sel=el('select','cs'),info=el('div'),svc=el('div'),res=el('div'),mp=el('div','map');mp.hidden=true;
+  list.append(sel,info,svc,res,mp);info.appendChild(busy());
+  try{GC=GC||await J('https://restcountries.com/v3.1/all?fields=name,cca2,translations')}catch(e){info.innerHTML='';return info.appendChild(msg(tr('net')))}
+  if(my!==tok)return;
+  GC.slice().sort((a,b)=>cn(a).localeCompare(cn(b))).forEach(c=>{const o=el('option','',cn(c));o.value=c.cca2;sel.appendChild(o)});
+  sel.value=GS.c;sel.onchange=()=>{GS.c=sel.value;pick()};
+  let M=null,mk=null;
+  async function pick(){info.innerHTML='';svc.innerHTML='';res.innerHTML='';mp.hidden=true;M=null;
+    const c0=GC.find(x=>x.cca2===GS.c);if(!c0)return;info.appendChild(busy());let c;try{c=(await J('https://restcountries.com/v3.1/alpha/'+c0.cca2))[0]}catch(e){info.innerHTML='';return info.appendChild(msg(tr('net')))}info.innerHTML='';
+    const im=el('img','hi');im.src=c.flags.png;im.alt='';info.append(im,rows([[W('الدولة','Country'),cn(c)],[W('العاصمة','Capital'),(c.capital||[]).join('، ')],[W('القارة','Region'),c.region],[W('السكان','Population'),nf(c.population)],[W('المساحة','Area'),nf(c.area)+' km²'],[W('العملة','Currency'),Object.values(c.currencies||{}).map(x=>x.name+(x.symbol?' ('+x.symbol+')':'')).join('، ')],[W('اللغات','Languages'),Object.values(c.languages||{}).join('، ')],[W('رمز الاتصال','Calling code'),((c.idd||{}).root||'')+(((c.idd||{}).suffixes||[]).length===1?c.idd.suffixes[0]:'')]]));
+    const eh=el('h2','',W('أرقام الطوارئ','Emergency numbers')),ef=el('div','fx');info.append(eh,ef);
+    J('https://emergencynumberapi.com/api/country/'+c.cca2).then(r=>{const e=r.data;[[W('الشرطة','Police'),e.police],[W('الإسعاف','Ambulance'),e.ambulance],[W('الإطفاء','Fire'),e.fire],[W('الطوارئ العام','General'),e.dispatch]].forEach(([a,o])=>{const n=((o||{}).all||[]).filter(Boolean),r=el('div','fr'),l=el('a','',n.join(' / '));if(!n.length)return;l.href='tel:'+n[0];r.append(el('b','',a),l);ef.appendChild(r)});if(!ef.children.length)eh.hidden=true}).catch(()=>eh.hidden=true);
+    const ci=el('input','cs');ci.type='search';ci.value=(c.capital||[])[0]||'';ci.placeholder=W('اسم المدينة','City name');
+    const find=async(lat,lon)=>{res.innerHTML='';res.appendChild(busy());
+      try{if(lat==null){const g=await J('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&accept-language='+LG+'&countrycodes='+c.cca2.toLowerCase()+'&q='+encodeURIComponent(ci.value));if(!g.length){res.innerHTML='';return res.appendChild(msg(tr('none')))}lat=+g[0].lat;lon=+g[0].lon}
+        const tg=SV.find(s=>s[0]===GS.s)[3],q='[out:json][timeout:25];(node['+tg+'](around:6000,'+lat+','+lon+');way['+tg+'](around:6000,'+lat+','+lon+'););out center 40;';
+        const j=await J('https://overpass-api.de/api/interpreter?data='+encodeURIComponent(q));res.innerHTML='';
+        const P=j.elements.map(x=>{const t=x.tags||{},la=x.lat!=null?x.lat:x.center.lat,lo=x.lon!=null?x.lon:x.center.lon;return{n:t['name:'+LG]||t.name||'—',ph:t.phone||t['contact:phone']||'',ad:[t['addr:street'],t['addr:city']].filter(Boolean).join('، '),oh:t.opening_hours||'',la,lo,d:hav(lat,lon,la,lo)}}).sort((a,b)=>a.d-b.d);
+        if(!P.length)return res.appendChild(msg(tr('none')));
+        mp.hidden=false;M=await mkMap(mp,[lat,lon],13);M.setView([lat,lon],13);mk=L.layerGroup().addTo(M);L.circleMarker([lat,lon],{radius:7,color:'#1d4ed8',fillOpacity:.9}).addTo(mk);
+        P.forEach(p=>{const pe=el('div','',p.n+(p.ph?'\n'+p.ph:''));pe.style.whiteSpace='pre-line';L.circleMarker([p.la,p.lo],{radius:8,color:'#e63946',fillOpacity:.8}).addTo(mk).bindPopup(pe);
+          const r=el('div','vs');r.append(el('b','',p.n+' · '+p.d.toFixed(1)+' km'),el('p','',[p.ad,p.ph,p.oh].filter(Boolean).join('\n')));res.appendChild(r)})}
+      catch(e){res.innerHTML='';res.appendChild(msg(tr('net')))}};
+    const go=el('button','more',W('ابحث عن المراكز','Find nearby')),me=el('button','more',W('حول موقعي','Near me'));go.onclick=()=>find();me.onclick=()=>navigator.geolocation&&navigator.geolocation.getCurrentPosition(p=>find(p.coords.latitude,p.coords.longitude));
+    svc.append(el('h2','',W('المراكز والخدمات في المدينة','City services')),ci,sub(SV.map(s=>[s[0],W(s[1],s[2])]),GS.s,k=>{GS.s=k;svc.querySelectorAll('.sub button').forEach(b=>b.setAttribute('aria-pressed','false'));find()}),go,me)}
+  pick()}
+// ---------- أدوات إضافية: معلومات الموقع، الساعة، التقويم، المناسبات، الأخبار ----------
+async function pinfo(M,ll,box){
+  const la=ll.lat,lo=((ll.lng+540)%360)-180,g=u=>J(u).catch(()=>null),pop=L.popup().setLatLng(ll).setContent(la.toFixed(4)+', '+lo.toFixed(4)).openOn(M);
+  box.innerHTML='';box.appendChild(busy());
+  const [r,e,w,n]=await Promise.all([g('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&accept-language='+LG+'&lat='+la+'&lon='+lo),g('https://api.open-meteo.com/v1/elevation?latitude='+la+'&longitude='+lo),g('https://api.open-meteo.com/v1/forecast?timezone=auto&current=temperature_2m,wind_speed_10m&latitude='+la+'&longitude='+lo),g(WH()+'action=query&list=geosearch&gslimit=10&gsradius=10000&gscoord='+la+'|'+lo)]);
+  box.innerHTML='';const a=(r&&r.address)||{},c=w&&w.current;if(r&&r.display_name)pop.setContent(r.display_name);
+  box.append(el('h2','',(r&&r.display_name)||W('موقع على الخريطة','Map location')),rows([[W('الإحداثيات','Coordinates'),la.toFixed(5)+', '+lo.toFixed(5)],[W('الدولة','Country'),a.country],[W('الارتفاع','Elevation'),e&&e.elevation?nf(e.elevation[0])+' m':''],[W('الحرارة الآن','Temperature now'),c?c.temperature_2m+' °C':''],[W('الرياح','Wind'),c?c.wind_speed_10m+' km/h':''],[W('المنطقة الزمنية','Time zone'),w&&w.timezone],[W('الوقت المحلي','Local time'),c?c.time.replace('T',' '):'']]));
+  const ar=(n&&n.query&&n.query.geosearch)||[];
+  if(ar.length){box.appendChild(el('h2','',W('مواضع قريبة في الموسوعة','Nearby in the encyclopedia')));ar.forEach(x=>{const k=el('a','hq',x.title+' · '+(x.dist/1000).toFixed(1)+' km');k.href='#/'+LG+'/'+encodeURIComponent(x.title);box.appendChild(k)})}}
+const rn=c=>{try{return new Intl.DisplayNames([LG],{type:'region'}).of(c)}catch(e){return c}};
+const cf=(d,c,o)=>{try{return new Intl.DateTimeFormat((LG==='ar'?'ar':LG)+'-u-ca-'+c+'-nu-latn',o).format(d)}catch(e){return''}};
+const TZC={Cairo:'EG',Riyadh:'SA',Dubai:'AE',Casablanca:'MA',Algiers:'DZ',Tunis:'TN',Baghdad:'IQ',Amman:'JO',Beirut:'LB',Damascus:'SY',Kuwait:'KW',Qatar:'QA',Bahrain:'BH',Muscat:'OM',Aden:'YE',Tripoli:'LY',Khartoum:'SD',Gaza:'PS',Hebron:'PS',Istanbul:'TR',Tehran:'IR',Karachi:'PK',Kolkata:'IN',Jakarta:'ID',Shanghai:'CN',Tokyo:'JP',Seoul:'KR',Moscow:'RU',Berlin:'DE',Paris:'FR',London:'GB',Madrid:'ES',Rome:'IT',Sao_Paulo:'BR',Mexico_City:'MX',Sydney:'AU',Johannesburg:'ZA',Lagos:'NG',New_York:'US',Chicago:'US',Los_Angeles:'US',Toronto:'CA'};
+const UC=(()=>{try{const z=Intl.DateTimeFormat().resolvedOptions().timeZone||'';return TZC[z.split('/').pop()]||((navigator.language||'').split('-')[1]||'').toUpperCase()}catch(e){return''}})();
+function clock(){const d=new Date(),L=LG==='ar'?'ar-u-nu-latn':LG;let t;try{t=d.toLocaleString(L,{dateStyle:'full',timeStyle:'medium'})}catch(e){t=d.toLocaleString()}
+  const h=cf(d,'islamic-umalqura',{dateStyle:'long'});$('clk').textContent=t+(h?' · '+h:'')+(UC?' · '+rn(UC):'')+' · '+Intl.DateTimeFormat().resolvedOptions().timeZone}
+// التقويم
+const CALS=[['gregory','ميلادي','Gregorian'],['islamic-umalqura','هجري (أم القرى)','Hijri (Umm al-Qura)'],['islamic-civil','هجري (مدني)','Hijri (civil)'],['persian','فارسي (شمسي هجري)','Persian'],['hebrew','عبري','Hebrew'],['coptic','قبطي','Coptic'],['ethiopic','إثيوبي','Ethiopic'],['indian','هندي وطني','Indian national'],['chinese','صيني','Chinese'],['japanese','ياباني','Japanese'],['buddhist','بوذي','Buddhist'],['roc','مينغو (تايوان)','Minguo']];
+let CC='islamic-umalqura',CY=new Date().getFullYear(),CM0=new Date().getMonth(),CV='';
+function cal(){
+  const dt=el('input','cs'),rw=el('div'),gr=el('div','cg'),hd=el('h2'),nv=el('div','ac'),sc=el('select','cs');
+  dt.type='date';dt.value=CV||new Date().toLocaleDateString('sv-SE');
+  CALS.forEach(c=>{const o=el('option','',W(c[1],c[2]));o.value=c[0];sc.appendChild(o)});sc.value=CC;
+  const sh=()=>{CV=dt.value;rw.innerHTML='';const d=new Date(dt.value+'T12:00:00');if(isNaN(d))return;rw.appendChild(rows(CALS.map(c=>[W(c[1],c[2]),cf(d,c[0],{dateStyle:'full'})])))};
+  const mg=()=>{gr.innerHTML='';const f=new Date(CY,CM0,1,12),e=new Date(CY,CM0+1,0,12),t=new Date().toDateString();
+    hd.textContent=cf(f,'gregory',{month:'long',year:'numeric'})+' | '+cf(f,CC,{month:'long',year:'numeric'})+' – '+cf(e,CC,{month:'long',year:'numeric'});
+    for(let i=0;i<7;i++)gr.appendChild(el('b','',cf(new Date(2023,0,1+i,12),'gregory',{weekday:'short'})));
+    for(let i=0;i<f.getDay();i++)gr.appendChild(el('div'));
+    for(let i=1;i<=e.getDate();i++){const d=new Date(CY,CM0,i,12),c=el('div',d.toDateString()===t?'td':'',i);c.appendChild(el('small','',cf(d,CC,{day:'numeric'})));gr.appendChild(c)}};
+  const mv=(n,k)=>{const b=el('button','',n);b.onclick=()=>{if(k){const d=new Date(CY,CM0+k,1);CY=d.getFullYear();CM0=d.getMonth()}else{CY=new Date().getFullYear();CM0=new Date().getMonth()}mg()};nv.appendChild(b)};
+  mv(W('الشهر السابق','Previous'),-1);mv(W('اليوم','Today'),0);mv(W('الشهر التالي','Next'),1);
+  dt.onchange=sh;sc.onchange=()=>{CC=sc.value;mg()};
+  list.append(el('h2','',W('حوّل أي تاريخ إلى كل التقويمات','Convert any date to every calendar')),dt,rw,el('h2','',W('التقويم الشهري','Monthly calendar')),sc,nv,hd,gr);sh();mg()}
+// المناسبات: المفتاح h = هجري (شهر-يوم) أو ميلادي (شهر-يوم) | عربي | English | الدول | الثيم | المدة بالأيام
+const OC=`h1-1|رأس السنة الهجرية|Islamic New Year|*|moon|1
+h1-10|يوم عاشوراء|Day of Ashura|*|moon|1
+h3-12|ذكرى المولد النبوي الشريف|Mawlid (birth of the Prophet)|*|moon|1
+h7-27|ذكرى الإسراء والمعراج|Isra and Miraj|*|moon|1
+h9-1|حلول شهر رمضان المبارك|Start of Ramadan|*|ramadan|3
+h10-1|عيد الفطر المبارك|Eid al-Fitr|*|fitr|3
+h12-9|يوم عرفة|Day of Arafah|*|adha|1
+h12-10|عيد الأضحى المبارك|Eid al-Adha|*|adha|4
+1-1|رأس السنة الميلادية|New Year's Day|*|fire|1
+12-25|عيد الميلاد المجيد|Christmas|*|christmas|1
+1-7|عيد الميلاد (الأرثوذكسي)|Orthodox Christmas|EG,RU|christmas|1
+3-21|عيد الأم|Mother's Day|EG,SA,AE,JO,LB,SY,IQ,KW,QA,BH,OM,LY,SD,PS|mother|1
+1-25|عيد الشرطة وذكرى ثورة يناير|Police Day and January 25 Revolution|EG|flag|1
+4-25|عيد تحرير سيناء|Sinai Liberation Day|EG|sinai|1
+7-23|ذكرى ثورة 23 يوليو|July 23 Revolution|EG|flag|1
+10-6|ذكرى نصر أكتوبر 1973 وعيد القوات المسلحة|October 1973 War Victory and Armed Forces Day|EG|war|1
+2-22|يوم التأسيس السعودي|Saudi Founding Day|SA|flag|1
+9-23|اليوم الوطني السعودي|Saudi National Day|SA|flag|1
+12-2|اليوم الوطني الإماراتي|UAE National Day|AE|flag|1
+11-18|عيد الاستقلال|Independence Day|MA,OM|flag|1
+7-30|عيد العرش|Throne Day|MA|flag|1
+7-5|عيد الاستقلال|Independence Day|DZ|flag|1
+11-1|ذكرى اندلاع الثورة التحريرية|Revolution Day|DZ|flag|1
+3-20|عيد الاستقلال|Independence Day|TN|flag|1
+5-25|عيد الاستقلال|Independence Day|JO|flag|1
+11-22|عيد الاستقلال|Independence Day|LB|flag|1
+4-17|عيد الجلاء|Evacuation Day|SY|flag|1
+2-25|اليوم الوطني|National Day|KW|flag|1
+12-18|اليوم الوطني|National Day|QA|flag|1
+12-16|اليوم الوطني|National Day|BH|flag|1
+5-22|يوم الوحدة اليمنية|Yemeni Unity Day|YE|flag|1
+12-24|عيد الاستقلال|Independence Day|LY|flag|1
+11-15|ذكرى إعلان وثيقة الاستقلال الفلسطينية|Declaration of Independence (1988)|PS|pal|1
+3-30|يوم الأرض|Land Day|PS|pal|1
+5-15|ذكرى النكبة|Nakba Day|PS|pal|1
+10-7|ذكرى بدء حرب غزة 2023: الرحمة لجميع الضحايا المدنيين ونسأل السلام|Anniversary of the start of the Gaza war (2023): remembering all civilian victims, hoping for peace|*|sol|1
+10-29|عيد الجمهورية|Republic Day|TR|flag|1
+10-3|يوم الوحدة الألمانية|German Unity Day|DE|flag|1
+7-4|عيد الاستقلال|Independence Day|US|flag|1
+7-14|العيد الوطني|Bastille Day|FR|flag|1
+8-15|عيد الاستقلال|Independence Day|IN|flag|1
+8-14|عيد الاستقلال|Independence Day|PK|flag|1
+8-17|عيد الاستقلال|Independence Day|ID|flag|1
+9-16|عيد الاستقلال|Independence Day|MX|flag|1
+9-7|عيد الاستقلال|Independence Day|BR|flag|1
+7-1|يوم كندا|Canada Day|CA|flag|1
+10-1|اليوم الوطني / الاستقلال|National Day / Independence Day|CN,NG|flag|1
+6-12|يوم روسيا|Russia Day|RU|flag|1
+4-27|يوم الحرية|Freedom Day|ZA|flag|1
+2-11|يوم تأسيس الدولة|National Foundation Day|JP|flag|1
+8-15|يوم التحرير|Liberation Day|KR|flag|1
+1-1|عيد الاستقلال|Independence Day|SD|flag|1
+11-28|عيد الاستقلال|Independence Day|MR|flag|1
+7-1|يوم الاستقلال|Independence Day|SO|flag|1
+6-27|عيد الاستقلال|Independence Day|DJ|flag|1
+7-6|عيد الاستقلال|Independence Day|KM|flag|1
+10-3|اليوم الوطني|National Day|IQ|flag|1`;
+const TH={adha:{e:['🐑','🕋','🌙','✨','🤲'],c:['#0b3d2e','#2a7d4f']},fitr:{e:['🌙','⭐','🍬','🎁','🕌'],c:['#2a1b5c','#7b4bb0']},ramadan:{e:['🌙','🏮','🕌','⭐','🍽️'],c:['#10163a','#2f3f9c']},christmas:{e:['🎅','🎄','❄️','🎁','⭐'],c:['#7a0c14','#1c5a2c']},fire:{e:['🎆','🎇','✨','🎉','🥳'],c:['#0a0a23','#4a1f7a']},flag:{e:['F','🎉','✨','F','🎊'],c:['#12303a','#1d5a66']},war:{e:['🎖️','✈️','🕊️','⭐','F'],c:['#1b1b1b','#6a1f1f']},sinai:{e:['F','🏔️','🌅','🕊️'],c:['#6b3f0f','#c98b2f']},pal:{e:['🇵🇸','🕊️','🌿','🔑'],c:['#0b3d1f','#8a1020']},moon:{e:['🌙','✨','🕌','📿'],c:['#0d1b2a','#1f4a6e']},sol:{e:['🕯️','🕊️'],c:['#15151a','#30303a']},mother:{e:['💐','🌸','❤️','🌷'],c:['#7a2a4f','#c25a86']}};
+const OCD=OC.split('\n').map(l=>{const[k,a,e,c,t,u]=l.split('|');return{h:k[0]==='h',k:k.replace('h',''),a,e,cc:c.split(','),th:t,u:+u}}),OCC=[...new Set(OCD.flatMap(o=>o.cc).filter(c=>c!=='*'))];
+const HF=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn',{month:'numeric',day:'numeric'});
+const flg=c=>/^[A-Z]{2}$/.test(c)?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):'🏳️';
+const wh=(d,u)=>d<=0&&d+u>0?W('اليوم','Today'):d===1?W('غدًا','Tomorrow'):W('بعد '+d+' يوم','In '+d+' days');
+function occList(cc,days){const r=[],t0=new Date();t0.setHours(12,0,0,0);
+  for(let i=-3;i<=days;i++){const d=new Date(t0.getTime()+i*864e5),p=HF.formatToParts(d),hk=p.find(x=>x.type==='month').value+'-'+p.find(x=>x.type==='day').value,gk=(d.getMonth()+1)+'-'+d.getDate();
+    OCD.forEach(o=>{if((o.h?hk:gk)!==o.k||(cc!=='*'&&!o.cc.includes('*')&&!o.cc.includes(cc)))return;if(i<0&&i+o.u<=0)return;r.push({n:W(o.a,o.e),th:o.th,cc:o.cc,d:i,u:o.u,dt:d})})}
+  return r}
+function burst(c,x,y,n,em){for(let i=0;i<n;i++){const p=el('span','pq',em[Math.random()*em.length|0]);p.style.left=x+'px';p.style.top=y+'px';p.style.setProperty('--dx',(Math.random()*240-120)+'px');p.style.setProperty('--dy',(Math.random()*-200+40)+'px');p.style.setProperty('--r',(Math.random()*360-180)+'deg');c.appendChild(p);setTimeout(()=>p.remove(),2400)}}
+function fall(c,em){const p=el('span','pq',em[Math.random()*em.length|0]);p.style.left=Math.random()*100+'%';p.style.top='-30px';p.style.setProperty('--dx',(Math.random()*80-40)+'px');p.style.setProperty('--dy',c.offsetHeight+60+'px');p.style.setProperty('--r',(Math.random()*240-120)+'deg');c.appendChild(p);setTimeout(()=>p.remove(),2400)}
+function occCard(o){
+  const T=TH[o.th]||TH.fire,em=T.e.map(x=>x==='F'?flg(o.cc[0]==='*'?UC:o.cc[0]):x),c=el('div','fm'),big=el('div','bgE',em[0]);
+  c.style.background='linear-gradient(135deg,'+T.c[0]+','+T.c[1]+')';
+  c.append(big,el('h2','',o.n),el('p','',o.dt.toLocaleDateString(LG==='ar'?'ar-u-nu-latn':LG,{dateStyle:'full'})+' · '+wh(o.d,o.u)));
+  if(o.cc[0]!=='*')c.appendChild(el('p','',o.cc.slice(0,4).map(rn).join('، ')));
+  c.onclick=e=>{const r=c.getBoundingClientRect();burst(c,e.clientX-r.left,e.clientY-r.top,14,em);big.animate([{transform:'scale(1) rotate(0)'},{transform:'scale(1.35) rotate(-10deg)'},{transform:'scale(1) rotate(0)'}],{duration:450})};
+  const iv=setInterval(()=>{if(!c.isConnected)return clearInterval(iv);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)fall(c,em)},o.th==='sol'?1500:500);
+  return c}
+let OCX=0,OCS=UC||'*';
+function banner(){const b=$('oc');b.innerHTML='';if(OCX)return;const a=occList(UC||'*',21),o=a.find(x=>x.d<=0)||a[0];if(!o)return;
+  const c=occCard(o),x=el('button','mx','×');x.style.color='#fff';x.onclick=e=>{e.stopPropagation();OCX=1;b.innerHTML=''};c.appendChild(x);b.appendChild(c)}
+// الأخبار
+const NCS='EG SA AE MA DZ TN IQ JO LB SY KW QA BH OM YE LY SD PS TR IR PK IN ID CN JP KR RU DE FR GB ES IT US CA BR MX AU ZA NG'.split(' ');
+const NTP=[['','الرئيسية','Top'],['WORLD','العالم','World'],['BUSINESS','اقتصاد','Business'],['TECHNOLOGY','تقنية','Technology'],['SPORTS','رياضة','Sports'],['SCIENCE','علوم','Science'],['HEALTH','صحة','Health'],['ENTERTAINMENT','فن وترفيه','Entertainment']];
+const NS={c:NCS.includes(UC)?UC:'EG',t:'',q:''};
+async function news(){
+  const my=tok,sel=el('select','cs'),out=el('div');
+  NCS.slice().sort((a,b)=>rn(a).localeCompare(rn(b))).forEach(c=>{const o=el('option','',rn(c));o.value=c;sel.appendChild(o)});sel.value=NS.c;sel.onchange=()=>{NS.c=sel.value;render()};
+  list.append(sel,sbox(W('بحث','Search'),W('ابحث في الأخبار…','Search news…'),q=>{NS.q=q;render()},NS.q),sub(NTP.map(t=>[t[0],W(t[1],t[2])]),NS.q?'-':NS.t,k=>{NS.t=k;NS.q='';render()}),out);out.appendChild(busy());
+  const ed='hl='+LG+'&gl='+NS.c+'&ceid='+NS.c+':'+LG,get=async u=>(await J('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u))).items||[];
+  try{let a=await get(NS.q?'https://news.google.com/rss/search?q='+encodeURIComponent(NS.q)+'&'+ed:'https://news.google.com/rss'+(NS.t?'/headlines/section/topic/'+NS.t:'')+'?'+ed);
+    if(!a.length&&!NS.q)a=await get('https://news.google.com/rss/search?q='+encodeURIComponent(rn(NS.c))+'&'+ed);
+    if(my!==tok)return;out.innerHTML='';if(!a.length)return out.appendChild(msg(tr('none')));
+    a.forEach(x=>{const i=x.title.lastIndexOf(' - '),c=el('a','hq',i>0?x.title.slice(0,i):x.title);c.href=x.link;c.target='_blank';c.rel='noopener';
+      if(i>0)c.appendChild(el('span','e',x.title.slice(i+3)));
+      try{c.appendChild(el('span','s',new Date(x.pubDate.replace(' ','T')+'Z').toLocaleString(LG==='ar'?'ar-u-nu-latn':LG,{dateStyle:'medium',timeStyle:'short'})))}catch(z){}
+      out.appendChild(c)})}
+  catch(e){if(my===tok){out.innerHTML='';out.appendChild(msg(tr('net')))}}}
+
+// ---------- الكتب (أرشيف الإنترنت: بحث + قراءة داخل الصفحة) ----------
+const BS={c:0,a:null,q:'',p:1},IA='https://archive.org/',cr=d=>[].concat(d.creator||[]);
+function bookCard(d){const a=el('a','bk2'),i=el('img'),id=d.identifier;a.href='#';i.src=IA+'services/img/'+id;i.loading='lazy';i.alt=d.title;i.onerror=()=>i.replaceWith(el('div','ph',d.title));
+  a.append(i,el('b','',d.title),el('span','',cr(d)[0]||''));
+  a.onclick=e=>{e.preventDefault();const n=el('div'),f=el('iframe','rd');f.src=IA+'embed/'+id;f.allowFullscreen=true;
+    n.append(el('h2','',d.title),el('p','',[cr(d).join('، '),d.year].filter(Boolean).join(' · ')),f,ext(IA+'details/'+id,W('فتح في صفحة كاملة','Open full page')));modal(n)};return a}
+function books(){
+  if(BS.a===null)BS.a=LG==='ar';const my=tok,g=el('div','bg'),more=el('a','more',tr('more')),k=BC[BS.c];more.href='#';BS.p=1;
+  const load=async()=>{more.textContent=tr('load');
+    try{const q='('+(BS.q||(BS.a?k[1]:k[2]))+') AND mediatype:texts AND NOT access-restricted-item:true'+(BS.a?' AND language:(Arabic OR ara OR ar)':''),
+      j=(await J(IA+'advancedsearch.php?output=json&rows=30&page='+BS.p+'&sort[]=downloads+desc&fl[]=identifier&fl[]=title&fl[]=creator&fl[]=year&q='+encodeURIComponent(q))).response;if(my!==tok)return;
+      if(!j.docs.length&&BS.p===1)g.appendChild(msg(tr('none')));BS.p++;j.docs.forEach(d=>g.appendChild(bookCard(d)));more.textContent=tr('more');if(j.docs.length<30)more.remove()}
+    catch(e){more.textContent=tr('retry')}};
+  list.append(sbox(W('بحث','Search'),W('ابحث عن كتاب أو مؤلف…','Search a book or author…'),q=>{BS.q=q;render()},BS.q),
+    sub(BC.map((c,i)=>[i,W(c[1],c[2])]),BS.q?-1:BS.c,i=>{BS.c=i;BS.q='';render()}),sub([['a',W('عربي فقط','Arabic only')]],BS.a?'a':'',()=>{BS.a=!BS.a;render()}),g,more);
+  more.onclick=e=>{e.preventDefault();load()};load()}
+// ---------- المناسبات: كل دول العالم ----------
+const NGD={};
+async function nager(cc){const y=new Date().getFullYear(),a=[];
+  for(const Y of[y,y+1]){const k=cc+Y;if(!NGD[k])NGD[k]=await J('https://date.nager.at/api/v3/PublicHolidays/'+Y+'/'+cc).catch(()=>[]);a.push(...NGD[k])}return a}
+async function occ(){
+  const my=tok,sel=el('select','cs'),bx=el('div'),ls=el('div'),fmt=d=>d.toLocaleDateString(LG==='ar'?'ar-u-nu-latn':LG,{dateStyle:'long'});
+  try{GC=GC||await J('https://restcountries.com/v3.1/all?fields=name,cca2,translations')}catch(e){}
+  const cs=(GC||OCC.map(c=>({cca2:c,name:{common:rn(c)},translations:{}}))).slice().sort((a,b)=>cn(a).localeCompare(cn(b)));if(my!==tok)return;
+  [['*',W('كل العالم','All world')],...cs.map(c=>[c.cca2,cn(c)])].forEach(([v,t])=>{const o=el('option','',t);o.value=v;sel.appendChild(o)});sel.value=OCS;if(sel.value!==OCS)sel.value=OCS='*';
+  const go=async()=>{const cc=OCS,t0=new Date();t0.setHours(12,0,0,0);ls.innerHTML='';bx.innerHTML='';ls.appendChild(busy());const a=occList(cc,366);
+    if(cc!=='*'){const N=await nager(cc);if(OCS!==cc)return;const seen=new Set(a.map(o=>o.dt.toDateString()));
+      N.forEach(h=>{const dt=new Date(h.date+'T12:00:00'),d=Math.round((dt-t0)/864e5);if(h.global===false||d<0||d>366||seen.has(dt.toDateString()))return;seen.add(dt.toDateString());
+        a.push({n:h.localName&&h.localName!==h.name?h.localName+' · '+h.name:h.name,th:'flag',cc:[cc],d,u:1,dt})});a.sort((x,y)=>x.d-y.d)}
+    ls.innerHTML='';
+    if(cc!=='*'&&!a.some(o=>!o.cc.includes('*')))ls.appendChild(ext('https://www.google.com/search?q='+encodeURIComponent(rn(cc)+' public holidays'),W('لا توجد قائمة جاهزة لهذه الدولة — اعرض أعيادها الوطنية على الويب','No ready list — see its national holidays on the web')));
+    if(a[0])bx.appendChild(occCard(a[0]));
+    a.forEach(o=>{const r=el('a','hq',o.n+' · '+fmt(o.dt)+' · '+wh(o.d,o.u));r.href='#';r.onclick=e=>{e.preventDefault();bx.innerHTML='';bx.appendChild(occCard(o));bx.scrollIntoView({behavior:'smooth'})};ls.appendChild(r)})};
+  sel.onchange=()=>{OCS=sel.value;go()};list.append(sel,bx,ls);go()}
+// ---------- مقارنات ----------
+const CI=[['SP.POP.TOTL','السكان','Population',1],['AG.SRF.TOTL.K2','المساحة (كم²)','Area (km²)',1],['EN.POP.DNST','الكثافة السكانية (للكم²)','Density (per km²)',1],['NY.GDP.MKTP.CD','الناتج المحلي ($)','GDP (US$)',1],['NY.GDP.PCAP.CD','نصيب الفرد من الناتج ($)','GDP per capita (US$)',1],['MS.MIL.TOTL.P1','عدد أفراد القوات المسلحة','Armed forces personnel',1],['MS.MIL.XPND.CD','الإنفاق العسكري ($)','Military spending (US$)',1],['MS.MIL.XPND.GD.ZS','الإنفاق العسكري % من الناتج','Military spending % of GDP',1],['SP.DYN.LE00.IN','متوسط العمر المتوقع','Life expectancy',1],['SE.ADT.LITR.ZS','القراءة والكتابة %','Literacy %',1],['SL.UEM.TOTL.ZS','البطالة % (الأقل أفضل)','Unemployment % (lower wins)',-1],['FP.CPI.TOTL.ZG','التضخم % (الأقل أفضل)','Inflation % (lower wins)',-1],['SP.URB.TOTL.IN.ZS','سكان المدن %','Urban population %',1]];
+const wb=(i,ids)=>J('https://api.worldbank.org/v2/country/'+ids.join(';')+'/indicator/'+i+'?format=json&mrnev=1&per_page=60').then(r=>{const m={};(r[1]||[]).forEach(x=>{if(x.value!=null)m[x.countryiso3code]=[x.value,x.date]});return m}).catch(()=>({}));
+let CL=null;const CP={t:'c',s:['EGY','SAU',''],x:'',y:''};
+async function cmp(){
+  const my=tok,out=el('div');
+  list.appendChild(sub([['c',W('مقارنة الدول','Countries')],['t',W('معلومة بمعلومة','Topic vs topic')]],CP.t,k=>{CP.t=k;render()}));
+  if(CP.t==='t'){
+    const a=el('input','cs'),b=el('input','cs'),go=el('button','more',W('قارن','Compare'));a.value=CP.x;b.value=CP.y;
+    a.placeholder=W('الموضوع الأول (مثال: ميسي)','First topic');b.placeholder=W('الموضوع الثاني (مثال: رونالدو)','Second topic');
+    go.onclick=async()=>{CP.x=a.value.trim();CP.y=b.value.trim();if(!CP.x||!CP.y)return;out.innerHTML='';out.appendChild(busy());
+      try{const P=await Promise.all([CP.x,CP.y].map(async n=>{const p=await article(n);if(!p)return{t:n,r:[],x:''};const q=(p.pageprops||{}).wikibase_item;return{t:p.title,x:secs(p.extract||'')[0][1].slice(0,600),r:q?await wd(q).catch(()=>[]):[]}}));
+        if(my!==tok)return;out.innerHTML='';const g=el('div','cp');g.style.gridTemplateColumns='.9fr 1.5fr 1.5fr';
+        g.append(el('div','h',''),...P.map(p=>el('div','h',p.t)),el('div','l',W('نبذة','Summary')),...P.map(p=>el('div','',p.x||'—')));
+        [...new Set(P.flatMap(p=>p.r.map(x=>x[0])))].forEach(l=>g.append(el('div','l',l),...P.map(p=>{const f=p.r.find(x=>x[0]===l);return el('div','',f?f[1]:'—')})));
+        out.appendChild(g)}catch(e){out.innerHTML='';out.appendChild(msg(tr('net')))}};
+    list.append(a,b,go,out);if(CP.x&&CP.y)go.onclick();return}
+  list.appendChild(busy());
+  try{CL=CL||(await J('https://restcountries.com/v3.1/all?fields=name,cca3,translations,flags,capital,borders')).sort((a,b)=>cn(a).localeCompare(cn(b)))}catch(e){list.lastChild.remove();return list.appendChild(msg(tr('net')))}
+  list.lastChild.remove();if(my!==tok)return;
+  const ss=CP.s.map((v,i)=>{const s=el('select','cs');if(i===2){const o=el('option','','— '+W('دولة ثالثة (اختياري)','3rd country (optional)'));o.value='';s.appendChild(o)}
+    CL.forEach(c=>{const o=el('option','',cn(c));o.value=c.cca3;s.appendChild(o)});s.value=v;s.onchange=()=>{CP.s[i]=s.value;run()};return s});
+  list.append(...ss,out);
+  async function run(){const ids=CP.s.filter(Boolean);out.innerHTML='';out.appendChild(busy());
+    const R=await Promise.all(CI.map(i=>wb(i[0],ids)));if(my!==tok)return;out.innerHTML='';
+    const C=ids.map(id=>CL.find(c=>c.cca3===id)),g=el('div','cp');g.style.gridTemplateColumns='1.2fr '+'1fr '.repeat(ids.length);
+    g.append(el('div','h',''),...C.map(c=>{const d=el('div','h'),f=el('img');f.src=c.flags.png;f.alt='';d.append(f,cn(c));return d}));
+    const row=(l,vals,dir)=>{const n=vals.map(v=>typeof v==='number'?v:NaN),ok=n.filter(x=>x===x),b=ok.length?(dir<0?Math.min:Math.max)(...ok):null;
+      g.append(el('div','l',l),...vals.map((v,i)=>el('div',b!=null&&n[i]===b?'wn':'',v==null?'—':typeof v==='number'?nf(v,{notation:'compact',maximumFractionDigits:2}):v)))};
+    row(W('العاصمة','Capital'),C.map(c=>(c.capital||[])[0]||null));row(W('الدول المجاورة','Neighbours'),C.map(c=>(c.borders||[]).length),1);
+    CI.forEach((i,k)=>row(W(i[1],i[2]),ids.map(id=>(R[k][id]||[])[0]),i[3]));
+    out.append(g,el('p','nt',W('المصدر: البنك الدولي (أحدث سنة متاحة لكل دولة، وقد تختلف سنة القياس). قوة الجيش تُعرض بعدد الأفراد والإنفاق العسكري. اللون المميز = الأعلى (أو الأقل في البطالة والتضخم).','Source: World Bank (latest year per country; reference years may differ). Military strength is shown as personnel and spending. Highlight = highest (lowest for unemployment/inflation).')))}
+  run()}
+// ---------- بحث معمق ----------
+const DQ={q:''},DL=[['محركات البحث','Search engines',[['Google','https://www.google.com/search?q='],['Bing','https://www.bing.com/search?q='],['DuckDuckGo','https://duckduckgo.com/?q='],['Yandex','https://yandex.com/search/?text='],['Brave','https://search.brave.com/search?q=']]],
+['فيديو','Video',[['YouTube','https://www.youtube.com/results?search_query='],['TikTok','https://www.tiktok.com/search?q='],['Dailymotion','https://www.dailymotion.com/search/'],['Vimeo','https://vimeo.com/search?q=']]],
+['فيسبوك ومنصات التواصل','Social media',[['Facebook','https://www.facebook.com/search/top?q='],['Facebook · صفحات','https://www.facebook.com/search/pages?q='],['Facebook · مجموعات','https://www.facebook.com/search/groups?q='],['X','https://x.com/search?q='],['Reddit','https://www.reddit.com/search/?q='],['Quora','https://www.quora.com/search?q=']]],
+['تليجرام','Telegram',[['قنوات ومنشورات','https://www.google.com/search?q=site:t.me+'],['TGStat','https://tgstat.com/search?q='],['Lyzem','https://lyzem.com/search?q=']]],
+['الويب العميق: أرشيفات وقواعد بيانات','Deep web: archives & databases',[['Internet Archive','https://archive.org/search?query='],['Google Scholar','https://scholar.google.com/scholar?q='],['BASE','https://www.base-search.net/Search/Results?lookfor='],['CORE','https://core.ac.uk/search?q='],['WorldCat','https://search.worldcat.org/search?q='],['HathiTrust','https://babel.hathitrust.org/cgi/ls?q1='],['ملفات PDF','https://www.google.com/search?q=filetype:pdf+']]],
+['موسوعات','Encyclopedias',[['ويكيبيديا','https://ar.wikipedia.org/w/index.php?search='],['Wikipedia','https://en.wikipedia.org/w/index.php?search='],['Wikidata','https://www.wikidata.org/w/index.php?search=']]]];
+function deep(){
+  list.append(sbox(W('بحث','Search'),W('اكتب كلمة أو سؤالًا…','Type a word or a question…'),q=>{DQ.q=q;render()},DQ.q),
+    el('p','nt',W('نتائج ويكيبيديا تظهر هنا مباشرة. أما فيسبوك وتليجرام ويوتيوب وبقية المنصات فتمنع المتصفح من جلب محتواها، لذا تفتح الأزرار البحث نفسه عندها في تبويب جديد. الويب المظلم (Tor) غير مشمول.','Wikipedia results appear here. Facebook, Telegram, YouTube and other platforms block in-page fetching, so each button opens the same search there in a new tab. The dark web (Tor) is not included.')));
+  if(!DQ.q)return;const q=encodeURIComponent(DQ.q);
+  DL.forEach(([a,e,L])=>{const g=el('div','ub');L.forEach(([n,u])=>{const x=el('a','',n);x.href=u+q;x.target='_blank';x.rel='noopener';g.appendChild(x)});list.append(el('h2','',W(a,e)),g)});
+  list.appendChild(el('h2','',W('نتائج ويكيبيديا','Wikipedia results')));wiki(DQ.q,0)}
+
+// ---------- ملصقات وصور وأعلام ----------
+const MS={t:'i',q:''};let JP=0;
+const cdn=u=>new Promise((o,n)=>{const s=el('script');s.src=u;s.onload=o;s.onerror=n;document.head.appendChild(s)});
+function dl(n,u,p){const i=new Image;i.crossOrigin='anonymous';i.onerror=()=>alert(tr('net'));i.onload=async()=>{const c=el('canvas'),x=c.getContext('2d');c.width=i.naturalWidth||800;c.height=i.naturalHeight||600;if(p){x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height)}x.drawImage(i,0,0,c.width,c.height);
+  if(!p)return c.toBlob(b=>{const a=el('a');a.href=URL.createObjectURL(b);a.download=n+'.png';a.click()});
+  try{JP=JP||await cdn('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');const d=new jspdf.jsPDF(c.width>c.height?'l':'p','pt','a4'),w=d.internal.pageSize.getWidth()-40,h=d.internal.pageSize.getHeight()-40,r=Math.min(w/c.width,h/c.height);d.addImage(c.toDataURL('image/jpeg',.92),'JPEG',20,20,c.width*r,c.height*r);d.save(n+'.pdf')}catch(e){alert(tr('net'))}};i.src=u}
+async function mda(){
+  const my=tok,g=el('div','gl');
+  list.append(sbox(W('بحث','Search'),W('ابحث عن صورة أو ملصق أو علم…','Search image, sticker or flag…'),q=>{MS.q=q;render()},MS.q),sub([['i',W('صور','Images')],['s',W('ملصقات ورسومات','Stickers & clipart')],['f',W('أعلام','Flags')]],MS.t,k=>{MS.t=k;render()}),g);g.appendChild(busy());
+  try{let a;
+    if(MS.t==='f'){GC=GC||await J('https://restcountries.com/v3.1/all?fields=name,cca2,translations');const q=norm(MS.q);a=GC.filter(c=>norm(cn(c)+' '+c.name.common).includes(q)).sort((x,y)=>cn(x).localeCompare(cn(y))).map(c=>({t:cn(c),u:'https://flagcdn.com/w320/'+c.cca2.toLowerCase()+'.png',f:'https://flagcdn.com/w1280/'+c.cca2.toLowerCase()+'.png'}))}
+    else{const j=await J('https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&generator=search&gsrnamespace=6&gsrlimit=40&prop=imageinfo&iiprop=url|mime&iiurlwidth=900&gsrsearch='+encodeURIComponent((MS.q||'school')+(MS.t==='s'?' filetype:drawing':' filetype:bitmap')));
+      a=Object.values((j.query||{}).pages||{}).filter(p=>p.imageinfo&&/^image\/(jpeg|png|webp|svg)/.test(p.imageinfo[0].mime)).map(p=>({t:p.title.replace(/^[^:]+:|\.\w+$/g,''),u:p.imageinfo[0].thumburl,f:p.imageinfo[0].thumburl}))}
+    if(my!==tok)return;g.innerHTML='';if(!a.length)g.appendChild(msg(tr('none')));
+    a.forEach(o=>{const i=el('img');i.src=o.u;i.alt=o.t;i.loading='lazy';i.onclick=()=>{const n=el('div'),b=el('div','ac'),p=el('button','',W('تنزيل PNG','Download PNG')),f=el('button','',W('تنزيل PDF','Download PDF')),big=el('img','hi');big.src=o.f;p.onclick=()=>dl(o.t,o.f);f.onclick=()=>dl(o.t,o.f,1);b.append(p,f);n.append(el('h2','',o.t),big,b);modal(n)};g.appendChild(i)})}
+  catch(e){g.innerHTML='';g.appendChild(msg(tr('net')))}}
+// ---------- الخطوط ----------
+const FS={ar:['Cairo','Tajawal','Amiri','Almarai','Lalezar','Reem Kufi','Aref Ruqaa','Harmattan','Scheherazade New','Lateef','Changa','El Messiri','Mada','Rakkas'],la:['Lobster','Pacifico','Playfair Display','Bebas Neue','Caveat','Oswald','Dancing Script','Merriweather','Roboto Slab','Permanent Marker'],gr:['Noto Serif','Noto Sans'],ru:['Comfortaa','PT Serif'],he:['Heebo','Frank Ruhl Libre'],hi:['Hind','Tiro Devanagari Hindi'],zh:['Noto Sans SC','Ma Shan Zheng'],ja:['Noto Sans JP','Zen Maru Gothic'],ko:['Noto Sans KR','Nanum Pen Script'],th:['Kanit','Sarabun']},
+AL={ar:'ابتثجحخدذرزسشصضطظعغفقكلمنهوي',la:'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',gr:'ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω',ru:'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯабвгдежзийклмнопрстуфхцчшщэюя',he:'אבגדהוזחטיכלמנסעפצקרשת',hi:'अआइईउऊएऐओऔकखगघचछजझटठडढणतथदधनपफबभमयरलवशषसह',zh:'你好世界中文字体学习汉字',ja:'あいうえおかきくけこさしすせそ',ko:'가나다라마바사아자차카타파하',th:'กขคงจฉชซญดตถทนบปผพฟมยรลวศสหอฮ'},
+FP={ar:'العربية',la:'Latin',gr:'Ελληνικά',ru:'Русский',he:'עברית',hi:'हिन्दी',zh:'中文',ja:'日本語',ko:'한국어',th:'ไทย'},FX={s:'ar',c:'#0f766e',t:'',z:38,r:0},FL=new Set;
+function fnt(){
+  const o=el('div'),tx=el('input','cs'),cl=el('input'),zs=el('input'),rb=el('button','',W('ألوان متعددة','Rainbow')),bar=el('div','ac');
+  tx.placeholder=W('اكتب كلمة أو جملة لتراها بكل الخطوط…','Type a word to see it in every font…');tx.value=FX.t;cl.type='color';cl.value=FX.c;zs.type='range';zs.min=18;zs.max=90;zs.value=FX.z;
+  const d=()=>{o.innerHTML='';FS[FX.s].forEach(f=>{if(!FL.has(f)){FL.add(f);const l=el('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family='+f.replace(/ /g,'+')+'&display=swap';document.head.appendChild(l)}
+    const v=el('div','vs'),p=el('p','tx'),s=FX.t||AL[FX.s];p.style.cssText='font-family:"'+f+'",sans-serif;font-size:'+FX.z+'px;line-height:1.5;overflow-wrap:anywhere;color:'+FX.c;
+    if(FX.r)[...s].forEach((ch,i)=>{const e=el('span','',ch);e.style.color='hsl('+i*47%360+',75%,50%)';p.appendChild(e)});else p.textContent=s;
+    v.append(el('span','e',f),p);o.appendChild(v)})};
+  tx.oninput=()=>{FX.t=tx.value;d()};cl.oninput=()=>{FX.c=cl.value;FX.r=0;d()};zs.oninput=()=>{FX.z=+zs.value;d()};rb.onclick=()=>{FX.r=1;d()};bar.append(cl,zs,rb);
+  list.append(sub(Object.keys(FS).map(k=>[k,FP[k]]),FX.s,k=>{FX.s=k;render()}),tx,bar,o);d()}
+// ---------- لغات العالم + أماكن تاريخية (قوائم حية) ----------
+const SQ={};
+async function lst(k,q,mk){
+  const my=tok,f=el('input','cs'),o=el('div');f.type='search';f.placeholder=W('تصفية…','Filter…');list.append(f,o);o.appendChild(busy());
+  try{SQ[k+LG]=SQ[k+LG]||(await J('https://query.wikidata.org/sparql?format=json&query='+encodeURIComponent(q))).results.bindings}catch(e){o.innerHTML='';return o.appendChild(msg(tr('net')))}
+  if(my!==tok)return;const s=new Set,A=SQ[k+LG].map(mk).filter(a=>a[0]&&!/^Q\d+$/.test(a[0])&&!s.has(a[0])&&s.add(a[0]));
+  const d=()=>{o.innerHTML='';const q=norm(f.value);A.filter(a=>norm(a.join(' ')).includes(q)).slice(0,80).forEach(a=>o.appendChild(item(a[1],a[0],'',a[2])))};f.oninput=d;d()}
+const lng=()=>lst('l','SELECT ?lLabel ?sp ?cl WHERE{?l wdt:P31 wd:Q34770;wdt:P1098 ?sp.OPTIONAL{?l wdt:P2341 ?x.?x rdfs:label ?cl.FILTER(lang(?cl)="'+LG+'")}SERVICE wikibase:label{bd:serviceParam wikibase:language "'+LG+',en".}}ORDER BY DESC(?sp) LIMIT 600',b=>[b.lLabel.value,W('لغة','Language'),nf(+b.sp.value,{notation:'compact'})+' '+W('ناطق','speakers')+(b.cl?' · '+b.cl.value:'')]);
+const plc=()=>lst('p','SELECT ?pLabel ?cLabel ?y WHERE{?p wdt:P1435 wd:Q9259;wdt:P17 ?c.OPTIONAL{?p wdt:P571 ?y}SERVICE wikibase:label{bd:serviceParam wikibase:language "'+LG+',en".}}LIMIT 1500',b=>[b.pLabel.value,W('موقع تراث عالمي','World Heritage'),[b.cLabel&&b.cLabel.value,b.y&&(y=>y<0?-y+tr('bc'):y)(parseInt(b.y.value))].filter(Boolean).join(' · ')]);
+// ---------- داء ودواء ----------
+const MD={d:['الأمراض عبر التاريخ','Diseases',['الطاعون','الجدري','الجذام','الكوليرا','السل','الملاريا','الإنفلونزا الإسبانية','شلل الأطفال','الحصبة','الحمى الصفراء','التيفوس','داء السكري','السرطان','الزهري','داء الكلب','كوفيد-19','الإيدز']],m:['الأدوية عبر التاريخ','Medicines',['الأسبرين','البنسلين','الأنسولين','المورفين','الكينين','الباراسيتامول','إيبوبروفين','اللقاح','المضاد الحيوي','الهيبارين','الميتفورمين']],h:['علاجات منزلية وأعشاب','Home remedies',['العسل','الزنجبيل','حبة البركة','القرفة','الكركم','البابونج','النعناع','الثوم','زيت الزيتون','الحلبة','اليانسون','القرنفل']]};
+let MK='d';
+function med(){
+  list.append(el('p','nt',W('للمعلومات والتثقيف فقط وليست وصفة طبية. استشر الطبيب أو الصيدلي قبل استعمال أي دواء أو علاج منزلي، خاصة مع الحمل أو الأمراض المزمنة أو الأطفال. أسعار الأدوية تختلف من بلد لآخر فاسأل الصيدلية.','For information only, not medical advice. Consult a doctor or pharmacist before using any medicine or home remedy. Drug prices vary by country; ask a pharmacy.')),
+    sbox(W('بحث','Search'),W('ابحث عن مرض أو دواء…','Search a disease or medicine…'),q=>{if(q){list.querySelectorAll('.card,section').forEach(x=>x.remove());wiki(q,0)}}),sub(Object.entries(MD).map(([k,v])=>[k,W(v[0],v[1])]),MK,k=>{MK=k;render()}));
+  if(LG==='ar')MD[MK][2].forEach(t=>list.appendChild(item(MD[MK][0],t,'','')))}
+// ---------- العملات ----------
+let RTS=0,CUR=0;const FA={a:1,b:''};
+const rates=async()=>RTS=RTS||(await J('https://open.er-api.com/v6/latest/USD')).rates;
+async function myCur(){if(CUR)return CUR;try{CUR=Object.keys((await J('https://restcountries.com/v3.1/alpha/'+(UC||'EG')+'?fields=currencies'))[0].currencies)[0]}catch(e){CUR='USD'}return CUR}
+async function fxs(){
+  const my=tok,a=el('input','cs'),s=el('select','cs'),f=el('input','cs'),o=el('div','cp');a.type='number';a.value=FA.a;f.type='search';f.placeholder=W('ابحث عن عملة…','Search currency…');list.append(a,s,f,o);o.appendChild(busy());
+  try{const R=await rates(),codes=Object.keys(R).sort(),dn=(()=>{try{return new Intl.DisplayNames([LG],{type:'currency'})}catch(e){return{of:c=>c}}})();FA.b=FA.b||await myCur();if(!R[FA.b])FA.b='USD';if(my!==tok)return;
+    codes.forEach(c=>{const x=el('option','',c+' · '+dn.of(c));x.value=c;s.appendChild(x)});s.value=FA.b;
+    const d=()=>{o.innerHTML='';o.style.gridTemplateColumns='2fr 1fr 1fr';FA.a=+a.value||1;const q=norm(f.value);o.append(el('div','h',W('العملة','Currency')),el('div','h','1 '+FA.b),el('div','h',nf(FA.a)+' '+FA.b));
+      codes.filter(c=>norm(c+' '+dn.of(c)).includes(q)).forEach(c=>{const r=R[c]/R[FA.b];o.append(el('div','',c+' · '+dn.of(c)),el('div','',nf(r,{maximumSignificantDigits:5})),el('div','wn',nf(FA.a*r,{maximumSignificantDigits:6})))})};
+    a.oninput=f.oninput=d;s.onchange=()=>{FA.b=s.value;d()};d()}catch(e){o.innerHTML='';o.appendChild(msg(tr('net')))}}
+// ---------- أسعار ----------
+const YF=s=>J('https://query1.finance.yahoo.com/v8/finance/chart/'+s+'?range=1mo&interval=1d').then(r=>r.chart.result[0].indicators.quote[0].close.filter(Boolean));
+let PS={t:'g',r:''};
+async function prc(){
+  const my=tok,out=el('div');
+  list.append(sub([['g',W('الذهب','Gold')],['s',W('الفضة','Silver')],['r',W('العقار','Real estate')],['f',W('الغذاء','Food')],['c',W('الملابس','Clothing')],['p',W('الهواتف','Phones')],['e',W('الإلكترونيات','Electronics')]],PS.t,k=>{PS.t=k;render()}),out);
+  if(/^[gs]$/.test(PS.t)){out.appendChild(busy());
+    try{const m=PS.t==='g',[c,R]=await Promise.all([myCur(),rates()]);let h;
+      try{h=await YF(m?'GC=F':'SI=F')}catch(e){h=[(await J('https://api.gold-api.com/price/'+(m?'XAU':'XAG'))).price]}
+      if(my!==tok)return;out.innerHTML='';const x=R[c]||1,n=h.length,k=Math.min(n,7),now=h[n-1],ye=n>1?h[n-2]:null,ex=k>1?now+(now-h[n-k])/(k-1):null,g=el('div','cp');g.style.gridTemplateColumns='repeat(4,1fr)';
+      g.append(...[W('الجرام','Per gram'),W('اليوم','Today'),W('أمس','Yesterday'),W('متوقع غدًا','Expected')].map(z=>el('div','h',z)));
+      (m?[24,22,21,18]:[24]).forEach(q=>{const f=v=>v==null?'—':nf(v*x/31.1035*q/24,{maximumFractionDigits:2});g.append(el('div','l',m?q+'K':W('فضة','Silver')),el('div','wn',f(now)),el('div','',f(ye)),el('div','',f(ex)))});
+      out.append(g,el('p','nt',W('العملة: '+c+'. «المتوقع» تقدير تقريبي من اتجاه آخر 7 أيام وليس نصيحة استثمار، والسعر عالمي قبل المصنعية والضرائب.','Currency: '+c+'. "Expected" is a rough 7-day trend estimate, not investment advice; global price before making charges and tax.')))}
+    catch(e){out.innerHTML='';out.appendChild(msg(tr('net')))}return}
+  const Q={r:['شقة للبيع','أرض للبيع','فيلا للبيع','شقة للإيجار'],f:['لحم','دجاج','أرز','سكر','زيت','حليب','بيض','خبز','خضروات','فواكه'],c:['قميص','بنطلون','حذاء','فستان','جاكيت'],p:['iPhone','Samsung Galaxy','Xiaomi','Huawei','Pixel'],e:['لابتوب','تلفزيون','ثلاجة','غسالة','شاشة','سماعات']}[PS.t],cc=UC||'EG',
+  go=t=>{if(t)open('https://www.google.com/search?hl='+LG+'&gl='+cc+(PS.t==='r'?'&q='+encodeURIComponent(t+' '+PS.r+' '+rn(cc)+' '+W('سعر','price')):'&tbm=shop&q='+encodeURIComponent(t+' '+W('سعر','price'))),'_blank','noopener')},ub=el('div','ub');
+  if(PS.t==='r'){const i=el('input','cs');i.placeholder=W('المنطقة أو المدينة','Area or city');i.value=PS.r;i.oninput=()=>PS.r=i.value;out.appendChild(i)}
+  Q.forEach(t=>{const b=el('button','',t);b.onclick=()=>go(t);ub.appendChild(b)});out.append(ub,sbox(W('بحث','Search'),W('ابحث عن سعر أي منتج في بلدك…','Search any price in your country…'),go))}
+// ---------- الصفحة الرئيسية (أخبار + مقال + طقس) وفحص الروابط ----------
+const HM={},hc=(k,f)=>HM[k]||(HM[k]=f());
+const WC=c=>c===0?['☀️','صافٍ','Clear']:c<4?['⛅','غائم جزئيًا','Partly cloudy']:c<49?['🌫️','ضباب','Fog']:c<68?['🌧️','مطر','Rain']:c<78?['❄️','ثلج','Snow']:c<85?['🌦️','زخات مطر','Showers']:c<87?['🌨️','زخات ثلج','Snow showers']:['⛈️','عواصف رعدية','Thunderstorm'];
+async function wloc(){let p=null;
+  try{const s=await navigator.permissions.query({name:'geolocation'});if(s.state==='granted')p=await new Promise((ok,no)=>navigator.geolocation.getCurrentPosition(ok,no,{timeout:6000}))}catch(e){}
+  if(p)return{la:p.coords.latitude,lo:p.coords.longitude,n:''};
+  const z=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').split('/').pop().replace(/_/g,' '),g=(await J('https://geocoding-api.open-meteo.com/v1/search?count=1&language='+(LG==='ar'?'ar':'en')+'&name='+encodeURIComponent(z))).results;
+  if(!g||!g[0])throw 0;return{la:g[0].latitude,lo:g[0].longitude,n:g[0].name}}
+function home(){
+  const my=tok,box=el('div','hm');list.appendChild(box);
+  const sec=(t,f)=>{const d=el('div'),o=el('div');d.append(el('h2','',t),o);o.appendChild(busy());box.appendChild(d);
+    hc(f[0],f[1]).then(r=>{if(my===tok){o.innerHTML='';r(o)}}).catch(()=>{if(my===tok){o.innerHTML='';o.appendChild(msg(tr('net')))}})};
+  sec(W('آخر الأخبار','Latest news'),['n'+LG+NS.c,async()=>{
+    const a=(await J('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://news.google.com/rss?hl='+LG+'&gl='+NS.c+'&ceid='+NS.c+':'+LG))).items||[];
+    return o=>{if(!a.length)return o.appendChild(msg(tr('none')));
+      a.slice(0,2).forEach(x=>{const i=x.title.lastIndexOf(' - '),c=el('a','hq',i>0?x.title.slice(0,i):x.title);c.href=x.link;c.target='_blank';c.rel='noopener';if(i>0)c.appendChild(el('span','e',x.title.slice(i+3)));o.appendChild(c)});
+      const m=el('a','more',W('كل الأخبار','All news'));m.href='#';m.onclick=e=>{e.preventDefault();view='news';tabs();render()};o.appendChild(m)}}]);
+  sec(W('مقال عشوائي','Random article'),['a'+LG,async()=>{
+    let l=LG,r;try{r=await J('https://'+l+'.wikipedia.org/api/rest_v1/page/random/summary')}catch(e){l='en';r=await J('https://en.wikipedia.org/api/rest_v1/page/random/summary')}
+    return o=>{const c=el('a','card'),x=r.extract||'';c.href='#/'+l+'/'+encodeURIComponent(r.title);
+      if(r.thumbnail){const i=el('img','th');i.src=r.thumbnail.source;i.alt='';i.loading='lazy';c.appendChild(i)}
+      c.append(el('span','t',r.title),el('span','s',x.slice(0,220)+(x.length>220?'…':'')));o.appendChild(c)}}]);
+  sec(W('حالة الطقس اليوم','Today\'s weather'),['w'+LG,async()=>{
+    const p=await wloc(),w=await J('https://api.open-meteo.com/v1/forecast?timezone=auto&forecast_days=1&latitude='+p.la+'&longitude='+p.lo+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max'),c=w.current,d=w.daily,x=WC(c.weather_code),r0=v=>nf(Math.round(v));
+    return o=>{const b=el('div','wx'),t=el('div'),pr=d.precipitation_probability_max[0];
+      t.append(el('b','',r0(c.temperature_2m)+'° · '+W(x[1],x[2])+(p.n?' · '+p.n:'')),
+        el('small','',W('الصغرى ','Low ')+r0(d.temperature_2m_min[0])+'° · '+W('العظمى ','High ')+r0(d.temperature_2m_max[0])+'° · '+W('الإحساس ','Feels ')+r0(c.apparent_temperature)+'°'),
+        el('small','',W('الرطوبة ','Humidity ')+nf(c.relative_humidity_2m)+'% · '+W('الرياح ','Wind ')+r0(c.wind_speed_10m)+W(' كم/س',' km/h')+(pr!=null?' · '+W('احتمال المطر ','Rain ')+nf(pr)+'%':'')));
+      b.append(el('span','bgE',x[0]),t);o.appendChild(b);
+      const ac=el('div','ac'),me=el('button','',W('استخدم موقعي الدقيق','Use my exact location'));
+      me.onclick=()=>navigator.geolocation&&navigator.geolocation.getCurrentPosition(()=>{delete HM['w'+LG];render()});ac.appendChild(me);o.appendChild(ac)}}])}
+
+const LKS='bit.ly tinyurl.com t.co goo.gl ow.ly is.gd cutt.ly rb.gy shorturl.at t.ly buff.ly tiny.cc'.split(' '),
+  BTL='tk ml ga cf gq xyz top click zip mov work support country loan icu cyou buzz rest monster'.split(' '),
+  KW='login signin verify secure account update confirm bank wallet password paypal gift prize bonus claim billing suspend'.split(' ');
+function lnk(){
+  const my=tok,out=el('div');
+  const run=async v=>{out.innerHTML='';if(!v)return;
+    let u;try{u=new URL(/^[a-z][a-z0-9+.-]*:\/\//i.test(v)?v:'https://'+v)}catch(e){return out.appendChild(msg(W('الرابط غير صالح','Invalid link')))}
+    if(!/^https?:$/.test(u.protocol))return out.appendChild(msg(W('بروتوكول غير مدعوم: ','Unsupported protocol: ')+u.protocol));
+    out.appendChild(busy());
+    const h=u.hostname.toLowerCase().replace(/\.$/,''),pt=h.split('.'),tld=pt[pt.length-1],ip=/^(\d{1,3}\.){3}\d{1,3}$/.test(h)||h.includes(':'),
+      n=/^(co|com|net|org|gov|edu|ac)$/.test(pt[pt.length-2]||'')&&tld.length===2?3:2,dom=ip?h:pt.slice(-n).join('.'),bad=[],ws=[],ok=[];
+    if(u.protocol==='https:')ok.push(W('اتصال مشفّر (HTTPS)','Encrypted connection (HTTPS)'));else ws.push(W('الرابط غير مشفّر (HTTP) — لا تُدخل بيانات حساسة','Not encrypted (HTTP) — do not enter sensitive data'));
+    if(u.username||u.password)bad.push(W('يحتوي بيانات دخول داخل الرابط — حيلة شائعة لإخفاء الوجهة الحقيقية','Contains credentials in the URL — a common trick to hide the real destination'));
+    if(ip)ws.push(W('يستخدم عنوان IP بدل اسم نطاق','Uses an IP address instead of a domain name'));
+    if(h.includes('xn--'))ws.push(W('اسم نطاق بأحرف دولية (Punycode) — قد يُقلّد موقعًا معروفًا','International (Punycode) domain — may imitate a known site'));
+    if(pt.length>4)ws.push(W('عدد كبير من النطاقات الفرعية','Many subdomains'));
+    if(LKS.includes(dom))ws.push(W('رابط مختصر: الوجهة النهائية مخفية','Shortened link: final destination is hidden'));
+    if(!ip&&BTL.includes(tld))ws.push(W('امتداد النطاق (.'+tld+') شائع في المواقع المزعجة','TLD (.'+tld+') is common in spam sites'));
+    const kw=KW.filter(k=>h.includes(k));if(kw.length&&(h.includes('-')||pt.length>n))ws.push(W('كلمات حساسة في اسم النطاق: ','Sensitive words in the domain: ')+kw.join('، '));
+    if(u.port)ws.push(W('منفذ غير معتاد: ','Unusual port: ')+u.port);
+    if(v.length>150)ws.push(W('رابط طويل جدًا','Very long link'));
+    const [dn,rd]=await Promise.all([ip?0:J('https://dns.google/resolve?name='+encodeURIComponent(h)+'&type=A').catch(()=>null),ip?0:J('https://rdap.org/domain/'+encodeURIComponent(dom)).catch(()=>null)]),
+      ips=ip?[h]:((dn&&dn.Answer)||[]).filter(a=>a.type===1).map(a=>a.data);
+    if(dn&&dn.Status===3)bad.push(W('اسم النطاق غير موجود','The domain does not exist'));
+    const gi=ips[0]&&!h.includes(':')?await J('https://ipwho.is/'+ips[0]).catch(()=>null):null,
+      ev=rd&&(rd.events||[]).find(e=>e.eventAction==='registration'),dy=ev?Math.floor((Date.now()-new Date(ev.eventDate))/864e5):null;
+    if(my!==tok)return;
+    if(dy!=null){if(dy<30)bad.push(W('النطاق حديث جدًا (عمره '+nf(dy)+' يومًا)','Very new domain ('+nf(dy)+' days old)'));else if(dy<180)ws.push(W('النطاق حديث نسبيًا (عمره '+nf(dy)+' يومًا)','Fairly new domain ('+nf(dy)+' days old)'));else ok.push(W('النطاق قديم نسبيًا (أكثر من 6 أشهر)','Established domain (6+ months)'))}
+    if(!bad.length&&!ws.length)ok.push(W('لا توجد مؤشرات شكلية مريبة','No suspicious patterns in the URL'));
+    out.innerHTML='';
+    out.appendChild(el('p','nt',bad.length?W('⛔ خطر محتمل — لا تفتح الرابط','⛔ Potentially dangerous — do not open it'):ws.length?W('⚠️ توخَّ الحذر قبل فتح الرابط','⚠️ Be careful before opening'):W('✅ لا مؤشرات خطر ظاهرة','✅ No obvious red flags')));
+    [['bd','⛔',bad],['wr','⚠️',ws],['ok','✅',ok]].forEach(([c,i,a])=>a.forEach(t=>out.appendChild(el('div','vs '+c,i+' '+t))));
+    const fx=el('div','fx'),row=(a,b)=>{if(!b)return;const r=el('div','fr');r.append(el('b','',a),el('span','',b));fx.appendChild(r)};
+    row(W('النطاق','Domain'),h);row(W('البروتوكول','Protocol'),u.protocol.slice(0,-1).toUpperCase());
+    row(W('عنوان IP','IP address'),ips.join('، '));if(gi&&gi.success){row(W('الدولة','Country'),[gi.country,gi.city].filter(Boolean).join(' · '));row(W('المزوّد','Provider'),gi.connection&&(gi.connection.org||gi.connection.isp))}
+    if(dy!=null)row(W('تاريخ تسجيل النطاق','Registered'),new Date(ev.eventDate).toLocaleDateString(LG==='ar'?'ar-u-nu-latn':LG,{dateStyle:'long'}));
+    row(W('المسار','Path'),u.pathname!=='/'?decodeURIComponent(u.pathname).slice(0,120):'');
+    row(W('المعاملات','Parameters'),[...u.searchParams.keys()].slice(0,8).join('، '));
+    out.append(fx,el('p','nt',W('الفحص إرشادي: لا يفتح الرابط ولا يضمن سلامته. إن كنت في شك فلا تُدخل بيانات ولا تنزّل ملفات.','Heuristic check: it never opens the link and cannot guarantee safety. If in doubt, enter no data and download nothing.')))};
+  list.append(el('h2','',W('فحص الروابط','Link checker')),el('p','s',W('الصق أي رابط لتعرف معلوماته ومؤشرات الخطر فيه دون فتحه.','Paste a link to see its details and red flags without opening it.')),sbox(W('افحص','Check'),'https://example.com',run),out)}
+
+// ---------- Firebase: حسابات، إعدادات، تفاعل، إدارة ----------
+const ADM='yousefmmama@gmail.com',GH={};let U=null,AD=false,FSZ=16;try{FSZ=+localStorage.getItem('fs')||16}catch(e){}
+const fb=()=>window.FB?Promise.resolve(window.FB):new Promise(r=>addEventListener('fb',()=>r(window.FB),{once:true})),
+  aid=(t,l)=>encodeURIComponent(l+':'+t),
+  tt=x=>{const d=el('div','ts',x);document.body.appendChild(d);setTimeout(()=>d.remove(),2600)},
+  closeM=()=>{const a=document.querySelectorAll('.lb');a.length&&a[a.length-1].remove()},
+  setFS=n=>{FSZ=n;document.documentElement.style.fontSize=n+'px';try{localStorage.setItem('fs',n)}catch(e){}},
+  ER={'auth/invalid-credential':['بيانات الدخول غير صحيحة','Wrong email or password'],'auth/email-already-in-use':['البريد مستخدم من قبل','Email already in use'],'auth/weak-password':['كلمة السر ضعيفة (6 أحرف على الأقل)','Weak password (6+ chars)'],'auth/invalid-email':['البريد غير صالح','Invalid email']};
+setFS(FSZ);
+function setU(u){U=u;AD=!!u&&(u.email||'').toLowerCase()===ADM;
+  if(AD){SN.adm=['الإدارة','Admin'];SEC.adm=adm}else{delete SN.adm;delete SEC.adm;if(view==='adm')view='q'}
+  document.querySelectorAll('.edb').forEach(b=>b.hidden=!AD);tabs();if(!AD&&view==='q'&&!$('q').value)render()}
+const need=()=>{if(U)return false;tt(W('سجّل الدخول أولًا','Please log in first'));openSet();return true};
+fb().then(async F=>{
+  try{const s=await F.getDocs(F.query(F.collection(F.db,'arts'),F.where('hid','==',true)));s.forEach(d=>{const c=d.data();GH[K(c.t,c.l)]=1});if(!s.empty&&view==='q'&&$('q').value.trim())render()}catch(e){}
+  F.onAuthStateChanged(F.auth,async u=>{setU(u);if(!u)return;
+    try{const r=F.doc(F.db,'users',u.uid),d=(await F.getDoc(r)).data()||{},up={f:{},s:{}};
+      [['f','fav'],['s','sav']].forEach(([a,b])=>{Object.entries(d[a]||{}).forEach(([id,o])=>{const k=K(o.t,o.l);if(!ST[b][k])ST[b][k]=o});Object.values(ST[b]).forEach(o=>up[a][aid(o.t,o.l)]={t:o.t,l:o.l,s:(o.s||'').slice(0,200),i:o.i||''})});
+      save();tabs();if(view==='fav'||view==='sav')render();await F.setDoc(r,up,{merge:true})}catch(e){}})});
+async function fbMk(kd,t,l,on,s,i){if(!U||kd==='hid')return;try{const F=await fb();await F.setDoc(F.doc(F.db,'users',U.uid),{[kd==='fav'?'f':'s']:{[aid(t,l)]:on?{t,l,s:(s||'').slice(0,200),i:i||''}:F.deleteField()}},{merge:true})}catch(e){}}
+$('sg').onclick=()=>openSet();
+function openSet(){const n=el('div'),O=[[14,W('صغير','Small')],[16,W('متوسط','Medium')],[19,W('كبير','Large')],[22,W('كبير جدًا','X-Large')]];let s;
+  s=sub(O,FSZ,k=>{setFS(k);[...s.children].forEach((b,i)=>b.setAttribute('aria-pressed',O[i][0]===k))});
+  n.append(el('h2','',W('حجم النص','Text size')),s,el('h2','',W('الحساب','Account')));
+  if(U){const o=el('button','more',W('تسجيل الخروج','Log out'));o.onclick=async()=>{const F=await fb();await F.signOut(F.auth);closeM()};n.append(el('p','',(U.displayName||'')+' · '+U.email),o)}
+  else{const nm=el('input','cs'),em=el('input','cs'),pw=el('input','cs'),b1=el('button','more',W('دخول','Log in')),b2=el('button','more',W('إنشاء حساب','Sign up'));
+    nm.placeholder=W('الاسم (عند إنشاء حساب)','Name (for sign up)');em.type='email';em.placeholder=W('البريد الإلكتروني','Email');pw.type='password';pw.placeholder=W('كلمة السر (6 أحرف فأكثر)','Password (6+ chars)');
+    const go=up=>async()=>{try{const F=await fb(),e=em.value.trim();if(e.toLowerCase()===ADM)throw{code:'auth/invalid-email'};
+        if(up){const c=await F.createUserWithEmailAndPassword(F.auth,e,pw.value);if(nm.value.trim())await F.updateProfile(c.user,{displayName:nm.value.trim().slice(0,40)})}else await F.signInWithEmailAndPassword(F.auth,e,pw.value);
+        closeM();tt(W('تم بنجاح','Done'))}catch(x){tt((ER[x.code]||['حدث خطأ، حاول مجددًا','Something went wrong']).slice(LG==='ar'?0:1)[0])}};
+    b1.onclick=go(false);b2.onclick=go(true);n.append(nm,em,pw,b1,b2)}
+  const hx=el('button','hx','·');hx.onclick=()=>{if(AD){closeM();view='adm';location.hash='';tabs();render();return}hx.remove();
+    const p=el('input','cs'),b=el('button','more',W('دخول الإدارة','Admin login'));p.type='password';p.placeholder=W('كلمة السر','Password');
+    b.onclick=async()=>{try{const F=await fb(),c=await F.signInWithEmailAndPassword(F.auth,ADM,p.value);setU(c.user);closeM();view='adm';location.hash='';tabs();render()}catch(e){tt(W('كلمة السر غير صحيحة','Wrong password'))}};n.append(p,b)};
+  n.appendChild(hx);modal(n)}
+function cmBox(t,l){
+  const id=aid(t,l),box=el('div'),bar=el('div','ac'),lk=el('button',''),dk=el('button',''),rp=el('button','',W('🚩 إبلاغ','🚩 Report')),er=el('button','',W('⚠️ فيها خطأ','⚠️ Has an error')),cl=el('div'),ta=el('textarea','cs'),sd=el('button','more',W('نشر التعليق','Post comment'));
+  let my=0,lc=0,dc=0;const paint=()=>{lk.textContent='👍 '+nf(lc);dk.textContent='👎 '+nf(dc);lk.setAttribute('aria-pressed',my===1);dk.setAttribute('aria-pressed',my===-1)};paint();
+  ta.rows=3;ta.maxLength=800;ta.placeholder=W('اكتب تعليقك…','Write a comment…');
+  const comments=async()=>{const F=await fb(),s=await F.getDocs(F.query(F.collection(F.db,'arts',id,'comments'),F.orderBy('ts','desc'),F.limit(30)));cl.innerHTML='';
+    if(s.empty)cl.appendChild(msg(W('لا توجد تعليقات بعد','No comments yet')));
+    s.forEach(d=>{const c=d.data(),r=el('div','vs');r.append(el('b','',c.u||W('مستخدم','User')),el('p','tx',c.x));
+      if(U&&(AD||c.uid===U.uid)){const x=el('button','',W('حذف','Delete'));x.onclick=async()=>{await F.deleteDoc(d.ref);comments()};r.appendChild(x)}cl.appendChild(r)})};
+  fb().then(async F=>{try{const d=(await F.getDoc(F.doc(F.db,'arts',id))).data()||{};lc=d.lk||0;dc=d.dl||0;if(U){const v=await F.getDoc(F.doc(F.db,'arts',id,'votes',U.uid));my=v.exists()?v.data().v:0}paint();await comments()}catch(e){}});
+  const vt=v=>async()=>{if(need())return;try{const F=await fb(),vr=F.doc(F.db,'arts',id,'votes',U.uid),o=((await F.getDoc(vr)).data()||{}).v||0,n=o===v?0:v,a=(n===1)-(o===1),b2=(n===-1)-(o===-1),b=F.writeBatch(F.db);
+      b.set(F.doc(F.db,'arts',id),{t,l,lk:F.increment(a),dl:F.increment(b2)},{merge:true});n?b.set(vr,{v:n}):b.delete(vr);await b.commit();lc+=a;dc+=b2;my=n;paint()}catch(e){tt(W('تعذّر الحفظ','Could not save'))}};
+  const rep=ty=>async()=>{if(need())return;const x=prompt(ty==='er'?W('ما الخطأ في هذه المقالة؟','What is wrong in this article?'):W('سبب الإبلاغ؟','Reason for reporting?'));if(!x||!x.trim())return;
+    try{const F=await fb();await F.addDoc(F.collection(F.db,'reports'),{id,t,l,ty,x:x.trim().slice(0,500),uid:U.uid,ts:F.serverTimestamp(),st:'open'});await F.setDoc(F.doc(F.db,'arts',id),{t,l},{merge:true});tt(W('أُرسل للإدارة','Sent to the admins'))}catch(e){tt(W('تعذّر الإرسال','Could not send'))}};
+  lk.onclick=vt(1);dk.onclick=vt(-1);rp.onclick=rep('rp');er.onclick=rep('er');
+  sd.onclick=async()=>{const x=ta.value.trim();if(!x||need())return;try{const F=await fb();await F.addDoc(F.collection(F.db,'arts',id,'comments'),{uid:U.uid,u:U.displayName||'',x,ts:F.serverTimestamp()});await F.setDoc(F.doc(F.db,'arts',id),{t,l},{merge:true});ta.value='';comments()}catch(e){tt(W('تعذّر النشر','Could not post'))}};
+  bar.append(lk,dk,rp,er);box.append(el('h2','',W('التفاعل','Community')),bar,el('h2','',W('التعليقات','Comments')),ta,sd,cl);return box}
+function sug(){const my=tok,out=el('div'),ti=el('input','cs'),ta=el('textarea','cs'),sd=el('button','more',W('إرسال للإدارة','Send to admins'));
+  ti.placeholder=W('عنوان المعلومة','Title');ti.maxLength=120;ta.rows=5;ta.maxLength=2000;ta.placeholder=W('اكتب المعلومة…','Write the information…');
+  sd.onclick=async()=>{const t=ti.value.trim(),x=ta.value.trim();if(!t||!x||need())return;try{const F=await fb();await F.addDoc(F.collection(F.db,'sug'),{t,x,uid:U.uid,u:U.displayName||'',ts:F.serverTimestamp(),st:'pending'});ti.value=ta.value='';tt(W('أُرسلت للمراجعة','Sent for review'))}catch(e){tt(W('تعذّر الإرسال','Could not send'))}};
+  list.append(el('h2','',W('أضف معلومة','Add information')),el('p','s',W('تراجع الإدارة معلومتك قبل نشرها.','Admins review your submission before it is published.')),ti,ta,sd,el('h2','',W('معلومات المستخدمين','User contributions')),out);out.appendChild(busy());
+  fb().then(async F=>{const s=await F.getDocs(F.query(F.collection(F.db,'sug'),F.where('st','==','approved'))),a=s.docs.map(d=>d.data()).sort((x,y)=>((y.ts&&y.ts.seconds)||0)-((x.ts&&x.ts.seconds)||0)).slice(0,30);
+    if(my!==tok)return;out.innerHTML='';if(!a.length)return out.appendChild(msg(tr('none')));a.forEach(c=>{const r=el('div','vs');r.append(el('b','',c.t),el('p','tx',c.x),el('small','',c.u||''));out.appendChild(r)})}).catch(()=>{if(my===tok){out.innerHTML='';out.appendChild(msg(tr('net')))}})}
+function adm(){const my=tok,box=el('div');list.appendChild(box);if(!AD)return;
+  const sect=(h,q,row)=>{const d=el('div'),o=el('div');d.append(el('h2','',h),o);o.appendChild(busy());box.appendChild(d);
+    const go=async()=>{const F=await fb(),s=await F.getDocs(F.query(F.collection(F.db,q[0]),F.where(q[1],'==',q[2])));if(my!==tok)return;o.innerHTML='';if(s.empty)o.appendChild(msg(tr('none')));s.forEach(x=>o.appendChild(row(F,x,go)))};go().catch(()=>{o.innerHTML='';o.appendChild(msg(tr('net')))})},
+    btn=(t,f)=>{const b=el('button','',t);b.onclick=async()=>{try{await f()}catch(e){tt(W('تعذّر التنفيذ','Failed'))}};return b},
+    link=c=>{const a=el('a','',c.t);a.href='#/'+c.l+'/'+encodeURIComponent(c.t);return a};
+  sect(W('البلاغات والأخطاء','Reports & errors'),['reports','st','open'],(F,x,go)=>{const c=x.data(),r=el('div','vs'),ac=el('div','ac');r.append(el('span','',c.ty==='er'?'⚠️ ':'🚩 '),link(c),el('p','tx',c.x));
+    ac.append(btn(W('حذف المقالة للجميع','Delete for everyone'),async()=>{await F.setDoc(F.doc(F.db,'arts',c.id),{t:c.t,l:c.l,hid:true},{merge:true});await F.updateDoc(x.ref,{st:'done'});GH[K(c.t,c.l)]=1;go()}),btn(W('تجاهل','Dismiss'),async()=>{await F.updateDoc(x.ref,{st:'done'});go()}));r.appendChild(ac);return r});
+  sect(W('معلومات بانتظار الموافقة','Pending submissions'),['sug','st','pending'],(F,x,go)=>{const c=x.data(),r=el('div','vs'),ac=el('div','ac');r.append(el('b','',c.t),el('p','tx',c.x),el('small','',c.u||''));
+    ac.append(btn(W('قبول','Approve'),async()=>{await F.updateDoc(x.ref,{st:'approved'});go()}),btn(W('رفض','Reject'),async()=>{await F.updateDoc(x.ref,{st:'rejected'});go()}));r.appendChild(ac);return r});
+  sect(W('مقالات محذوفة','Deleted articles'),['arts','hid',true],(F,x,go)=>{const c=x.data(),r=el('div','vs'),ac=el('div','ac');r.appendChild(link(c));
+    ac.appendChild(btn(W('استعادة','Restore'),async()=>{await F.updateDoc(x.ref,{hid:false});delete GH[K(c.t,c.l)];go()}));r.appendChild(ac);return r})}
+
+const SEC={map,books,space,stories,islam,cook,sci,gov,news,occ,cal,cmp,deep,mda,fnt,lng,plc,med,prc,fxs,lnk,sug};
+const TB=$('th'),setT=t=>{document.documentElement.dataset.theme=t;TB.textContent=t==='dark'?tr('tD'):tr('tL');try{localStorage.setItem('th',t)}catch(e){}};
+TB.onclick=()=>setT(document.documentElement.dataset.theme==='dark'?'light':'dark');
+async function stats(){
+  const my=LG,key='ymm_cnt_'+LG,sub=$('sub'),a=el('a','','www.socialcreator.com/youznet');
+  a.href='https://www.socialcreator.com/youznet';a.target='_blank';a.rel='noopener';
+  const show=n=>{if(my!==LG)return;$('top').textContent=tr('cnt')(n?nf(n):'');sub.textContent=tr('desc')(n?nf(n):'');sub.appendChild(a)};
+  let c=0;try{c=localStorage.getItem(key)||0}catch(e){}show(c);
+  try{const j=await(await fetch(WH()+'action=query&meta=siteinfo&siprop=statistics')).json();c=j.query.statistics.articles;try{localStorage.setItem(key,c)}catch(e){}show(c)}catch(e){}}
+function fill(a){const s=$('lg');s.innerHTML='';a.forEach(([c,n])=>{const o=el('option','',n);o.value=c;s.appendChild(o)});
+  if(![...s.options].some(o=>o.value===LG)){const o=el('option','',LG);o.value=LG;s.appendChild(o)}s.value=LG}
+async function langs(){
+  let a;try{a=JSON.parse(localStorage.getItem('ymm_lgs'))}catch(e){}
+  fill(a||LGS);if(a)return;
+  try{const j=(await(await fetch('https://meta.wikimedia.org/w/api.php?action=sitematrix&smtype=language&format=json&origin=*')).json()).sitematrix;
+    a=Object.keys(j).filter(k=>/^\d+$/.test(k)).map(k=>j[k]).filter(x=>(x.site||[]).some(s=>s.code==='wiki'&&s.closed===undefined)).sort((x,y)=>(x.localname||x.name).localeCompare(y.localname||y.name))
+      .map(x=>[x.code,x.name+(x.localname&&x.localname!==x.name?' · '+x.localname:'')]);
+    if(a.length>50){try{localStorage.setItem('ymm_lgs',JSON.stringify(a))}catch(e){}fill(a)}}catch(e){}}
+async function gw(){if(Object.keys(GL).length)return;
+  try{const j=await(await fetch('https://en.wikipedia.org/w/api.php?action=query&titles=Geography&prop=langlinks&lllimit=max&format=json&origin=*')).json();
+    (Object.values(j.query.pages)[0].langlinks||[]).forEach(x=>GL[x.lang]=x['*']);try{localStorage.setItem('ymm_gl',JSON.stringify(GL))}catch(e){}ui()}catch(e){}}
+function ui(){const h=document.documentElement;h.lang=LG;h.dir=RTL.test(LG)?'rtl':'ltr';
+  {const nm='YMM '+(GW[LG]||GL[LG]||'Geography');document.title=nm;$('h1').textContent=nm}
+  $('q').placeholder=tr('ph');$('top').textContent=tr('cnt')('');
+  if($('lg').value!==LG)fill([...$('lg').options].map(o=>[o.value,o.textContent]));
+  setT(h.dataset.theme);tabs();stats();banner()}
+$('lg').onchange=e=>{LG=e.target.value;try{localStorage.setItem('lg',LG)}catch(x){}location.hash='';ui();render()};
+$('q').addEventListener('input',()=>{if(location.hash)location.hash='';if(view!=='q'){view='q';tabs()}render()});
+addEventListener('hashchange',route);
+ui();render();route();clock();setInterval(clock,1000);
+addEventListener('load',()=>setTimeout(()=>{langs();gw()},2500));
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import * as A from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import * as S from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyBBVEw-Ep2_98hfw6p_1TRPq2y6OnuOaiQ",authDomain:"ymm-aljghraphe.firebaseapp.com",projectId:"ymm-aljghraphe",storageBucket:"ymm-aljghraphe.firebasestorage.app",messagingSenderId:"17135489192",appId:"1:17135489192:web:6ff107cfeff53cdeb4f29d",measurementId:"G-ZVZ8JH2LR7"});
+import("https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js").then(m=>m.getAnalytics(app)).catch(()=>{});
+window.FB={...A,...S,db:S.getFirestore(app),auth:A.getAuth(app)};
+window.dispatchEvent(new Event("fb"));
+</script>
+</body>
+</html>
